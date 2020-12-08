@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<label>Amount</label>
+<input type="number" id="money"/>
+<label> From Currency</label>
+<select name="country">
+    <option value="vn">Viet Nam</option>
+    <option value="usd">USD</option>
+</select>
+<label> To Currency</label>
+<select name="country">
+    <option value="vn">Viet Nam</option>
+    <option value="usd">USD</option>
+</select>
+<button type="submit">Convert</button>
+
+<script>
+    let selectElement=document.getElementById("country");
+    selectElement.addEventListener("change"changefunction);
+
+    function changefunction(){
+var selectvalue=document.getElementById("country").value;
+
+    }
+
+</script>
+
+<
+</body>
+</html>
