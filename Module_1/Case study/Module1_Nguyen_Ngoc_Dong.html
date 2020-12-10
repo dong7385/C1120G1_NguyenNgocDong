@@ -23,24 +23,24 @@
 </head>
 <body>
 <form>
-    <table>
+    <table id="mytable">
         <caption>FORM THÔNG TIN KHÁCH HÀNG</caption>
         <tr>
             <td>Tên Khách Hàng</td>
             <td>
-                <input type="text" id="name"/>
+                <input type="text" id="customerName"/>
             </td>
         </tr>
         <tr>
             <td> Số chứng Minh Nhân Dân</td>
             <td>
-                <input type="number" id="number"/>
+                <input type="number" id="identityCardNumber"/>
             </td>
         </tr>
         <tr>
             <td> Ngày Tháng Năm Sinh</td>
             <td>
-                <input type="date" id="day"/>
+                <input type="date" id="dateOfBirth"/>
             </td>
         </tr>
         <tr>
@@ -52,7 +52,7 @@
         <tr>
             <td> Địa Chỉ</td>
             <td>
-                <textarea row="10" cols="40" id="diachi"></textarea>
+                <textarea row="10" cols="40" id="address"></textarea>
             </td>
         </tr>
         <tr>
@@ -76,7 +76,7 @@
         <tr>
             <td> Loại Dịch Vụ </td>
             <td>
-                <select name="Dịch Vụ">
+                <select name="service">
                     <option value="Villa"> Villa</option>
                     <option value="House">House</option>
                     <option value="Room">Room</option>
@@ -86,7 +86,7 @@
         <tr>
             <td> Loại Phòng Thuê </td>
             <td>
-                <select name="Phòng Thuê">
+                <select name="roomTypeForRent">
                     <option value="Vip"> Vip</option>
                     <option value="Business">Business</option>
                     <option value="Normal">Normal</option>
@@ -96,6 +96,19 @@
 
 
     </table>
+    <br>
+        <p>Bảng giá: </p>
+    <ul>
+        <li>Villa 500$/ 1 ngày</li>
+        <li>House 300$/1 ngày</li>
+        <li>Room: 100$/1 ngày</li>
+    </ul>
+
+    <tr><button onclick="information" >Submit</button></tr>
+
+    </table>
+
+
 
 
 </form>
