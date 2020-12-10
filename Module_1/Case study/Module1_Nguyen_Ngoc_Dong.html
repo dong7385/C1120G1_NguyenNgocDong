@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 700px;
+            background-color: bisque;
+            text-align: left;
+        }
+
+        caption {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: blue;
+            px;
+            font-size: 25
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <caption>FORM THÔNG TIN KHÁCH HÀNG</caption>
+        <tr>
+            <td>Tên Khách Hàng</td>
+            <td>
+                <input type="text" id="name"/>
+            </td>
+        </tr>
+        <tr>
+            <td> Số chứng Minh Nhân Dân</td>
+            <td>
+                <input type="number" id="number"/>
+            </td>
+        </tr>
+        <tr>
+            <td> Ngày Tháng Năm Sinh</td>
+            <td>
+                <input type="date" id="day"/>
+            </td>
+        </tr>
+        <tr>
+            <td> Email</td>
+            <td>
+                <input type="email" id="email"/>
+            </td>
+        </tr>
+        <tr>
+            <td> Địa Chỉ</td>
+            <td>
+                <textarea row="10" cols="40" id="diachi"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td> Loại Customer</td>
+            <td>
+                <input type="radio" name="customer" value="Diamond"/>Diamond
+                <input type="radio" name="customer" value="Platinum"/>Platinum
+                <input type="radio" name="customer" value="Gold"/>Gold
+                <input type="radio" name="customer" value="Platinum"/>Silver
+                <input type="radio" name="customer" value="Diamond"/>Member
+            </td>
+        </tr>
+        <tr>
+            <td> Giảm giá </td>
+        </tr>
+        <tr>
+            <td> Số lượng đi kèm </td>
+        </tr>
+        <tr>
+            <td> Số ngày thuê </td>
+        <tr>
+            <td> Loại Dịch Vụ </td>
+            <td>
+                <select name="Dịch Vụ">
+                    <option value="Villa"> Villa</option>
+                    <option value="House">House</option>
+                    <option value="Room">Room</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Loại Phòng Thuê </td>
+            <td>
+                <select name="Phòng Thuê">
+                    <option value="Vip"> Vip</option>
+                    <option value="Business">Business</option>
+                    <option value="Normal">Normal</option>
+                </select>
+            </td>
+        </tr>
+
+
+    </table>
+
+
+</form>
+
+</body>
+</html>
