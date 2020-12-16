@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let b = [];
+    // Tao mang 2 chieu voi so cot khong bang nhau
+    for (let i = 0; i < 3; i++) {
+        // b[i] = [];
+        let numCol = parseInt(prompt("Please input column for row " + i));
+        b[i] = new Array(numCol);
+        for (let j = 0; j < b[i].length; j++) {
+            b[i][j] = prompt("Please input " + i + " " + j);
+        }
+    }
+
+    console.log(b);
+</script>
+</body>
+</html>
