@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // b = [];
+    // for (i = 0; i < 4; i++) {
+    //     b[i] = [];
+    //     for (j = 0; j < 5; j++) {
+    //         b[i][j] = parseInt(prompt("input number" + i + "   " + j));
+    //     }
+    // }
+    // console.log(b);
+    let i;
+    let b = [];
+    for ( i = 0; i < 3; i++) {
+        let numcol = parseInt(prompt("please input collum of row" + i));
+        b[i] = new Array(numcol);
+        for (j = 0; j < b[i].length; j++) {
+            b[i][j] = parseInt(prompt("please input" + i + "  " + j));
+        }
+
+    }
+    console.log(b)
+
+
+</script>
+
+
+</body>
+</html>
