@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu Cau 2</title>
+</head>
+<body>
+
+<script>
+    let name="Nguyễn Văn A";
+    let cmnd="2015222222";
+    let birthday="01/01/1999";
+    let email="haha@gmail.com";
+    let addresss=" 27 Ngô Gia Tự";
+    let typeservice="Villa";
+    let typeRoom="vip";
+    let typeCustomer="Diaamond";
+    let discount=10;
+    let quantityIncluded=10;
+    let renDays=5;
+    let totalPay;
+
+    let choose=parseInt(prompt("1. Hiển thị thông tin khách hàng."+"\n"+
+        "2. Chỉnh sửa thông tin khách hàng ."+"\n"+
+        "3. Hiển thị giá sau khi khi được giảm giá ."+"\n"
+    ));
+
+    switch (choose) {
+        case 1:
+            alert("name:  " + name +"\n"+
+                "cmnd:  " + cmnd +"\n"+
+                "birthday:  " + birthday +"\n"+
+                "email:  " + email +"\n"+
+                "address:  " + addresss +"\n"+
+                "typeservice:  " + typeservice +"\n"+
+                "typeRoom:  " + typeRoom +"\n"+
+                "typeCustomer:  " + typeCustomer +"\n"+
+                "discount:  " + discount +"\n"+
+                "quantityIncluded:  " + quantityIncluded +"\n"+
+                "renDays:  " + renDays );
+            break;
+
+         case 2:
+             let chooseEdit=parseInt(prompt(
+                 "1.name:  " + name +"\n"+
+                 "2.cmnd:  " + cmnd +"\n"+
+                 "3.birthday:  " + birthday +"\n"+
+                 "4.email:  " + email +"\n"+
+                 "5.address:  " + addresss +"\n"+
+                 "6.typeservice:  " + typeservice +"\n"+
+                 "7.typeRoom:  " + typeRoom +"\n"+
+                 "8.typeCustomer:  " + typeCustomer +"\n"+
+                 "9.discount:  " + discount +"\n"+
+                 "10.quantityIncluded:  " + quantityIncluded +"\n"+
+                 "11.renDays:  " + renDays
+                 ));
+
+                switch (chooseEdit) {
+                    case 1:
+                        name=prompt("Enter name:  ");
+                        break;
+                    case 2:
+                        cmnd=prompt("Enter cmnd:  ");
+                        break;
+                    case 3:
+                        birthday=prompt("Enter birthday:  ");
+                        break;
+                    case 4:
+                        email=prompt("Enter emai:  ");
+                        break;
+                    case 5:
+                        addresss=prompt("Enter address:  ");
+                        break;
+                    case 6:
+                        typeservice=prompt("Enter typeservice:  ");
+                        break;
+                    case 7:
+                        typeRoom=prompt("Enter typeRoom:  ");
+                        break;
+                    case 8:
+                        typeCustomer=prompt("Enter typeCustomer:  ");
+                        break;
+                    case 9:
+                        discount=prompt("Enter discount:  ");
+                        break;
+                    case 10:
+                        quantityIncluded=prompt("Enter quantityIncluded:  ");
+                        break;
+                    case 11:
+                        renDays=prompt("Enter renDays:  ");
+                        break;
+
+                    default:{
+                        alert("faile");
+                    }
+                }
+             alert("name:  " + name +"\n"+
+                 "cmnd:  " + cmnd +"\n"+
+                 "birthday:  " + birthday +"\n"+
+                 "email:  " + email +"\n"+
+                 "address:  " + addresss +"\n"+
+                 "typeservice:  " + typeservice +"\n"+
+                 "typeRoom:  " + typeRoom +"\n"+
+                 "typeCustomer:  " + typeCustomer +"\n"+
+                 "discount:  " + discount +"\n"+
+                 "quantityIncluded:  " + quantityIncluded +"\n"+
+                 "renDays:  " + renDays );
+              default:{
+                  alert("su lua chon")
+              }
+         }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 700px;
+
+            text-align: left;
+        }
+        caption {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: blue;
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<form>
+    <table id="mytable" cellpadding="0" cellspacing="5"/>
+        <caption>FORM THÔNG TIN KHÁCH HÀNG</caption>
+        <tr>
+            <td>Tên Khách Hàng</td>
+            <td>
+                <input type="text" id="customerName"/>
+            </td>
+        </tr>
+        <tr>
+            <td> Số chứng Minh Nhân Dân</td>
+            <td>
+                <input type="number" id="identityCardNumber"/>
+            </td>
+        </tr>
+        <tr>
+            <td> Ngày Tháng Năm Sinh</td>
+            <td>
+                <input type="date" id="dateOfBirth"/>
+            </td>
+        </tr>
+        <tr>
+            <td> Email</td>
+            <td>
+                <input type="email" id="email"/>
+            </td>
+        </tr>
+        <tr>
+            <td> Địa Chỉ</td>
+            <td>
+                <textarea row="10" cols="40" id="address"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td> Loại Customer</td>
+            <td>
+                <input type="radio" name="customer" value="Diamond"/>Diamond
+                <input type="radio" name="customer" value="Platinum"/>Platinum
+                <input type="radio" name="customer" value="Gold"/>Gold
+                <input type="radio" name="customer" value="Platinum"/>Silver
+                <input type="radio" name="customer" value="Diamond"/>Member
+            </td>
+        </tr>
+        <tr>
+            <td> Giảm giá </td>
+            <td>
+                <input type="number"id="discount">
+            </td>
+        </tr>
+        <tr>
+            <td> Số lượng đi kèm </td>
+            <td>
+                <input type="number"id="quantityIncluded">
+            </td>
+        </tr>
+        <tr>
+            <td> Số ngày thuê </td>
+            <td>
+                <input type="number"id="renDay">
+            </td>
+        <tr>
+            <td> Loại Dịch Vụ </td>
+            <td>
+                <select name="service">
+                    <option value="Villa"> Villa</option>
+                    <option value="House">House</option>
+                    <option value="Room">Room</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Loại Phòng Thuê </td>
+            <td>
+                <select name="roomTypeForRent">
+                    <option value="Vip"> Vip</option>
+                    <option value="Business">Business</option>
+                    <option value="Normal">Normal</option>
+                </select>
+            </td>
+        </tr>
+
+
+    </table>
+    <br>
+        <p>Bảng giá: </p>
+    <ul>
+        <li>Villa 500$/ 1 ngày</li>
+        <li>House 300$/1 ngày</li>
+        <li>Room: 100$/1 ngày</li>
+    </ul>
+
+    <tr><input type="button" value="Submit" onclick="information()"></tr>
+
+    </table>
+
+</form>
+<p id="showCustomerName" ></p>
+<p id="showidentityCardNumber" ></p>
+<p id="showdateOfBirth" ></p>
+<p id="showemail" ></p>
+<p id="showaddress" ></p>
+<p id="showCustomer" ></p>
+<p id="showdiscount" ></p>
+<p id="showdquantityIncluded" ></p>
+<p id="showrenDay" ></p>
+<p id="showservice" ></p>
+<p id="showroomTypeForRent" ></p>
+
+
+
+
+<script>
+    let nameid= document.getElementById("customerName");
+    let identityid = document.getElementById("identityCardNumber");
+    let dateOfBirthid=document.getElementById("dateOfBirth");
+    let emailid=document.getElementById("email");
+    let addressid=document.getElementById("address");
+    let customerid=document.getElementById("customer");
+    let discountid=document.getElementById("discount");
+    let quantityIncludedid=document.getElementById("quantityIncluded");
+    let renDayid=document.getElementById("renDay");
+    let serviceid=document.getElementById("service");
+    let roomTypeForRentid=document.getElementById("dateOfBirth");
+
+    function information() {
+        let nameValue=nameid.value;
+        document.getElementById("showCustomerName").innerText="Tên Khách Hàng: "+nameid.value;
+
+        let identityvalue = identityid.value;
+        document.getElementById("showidentityCardNumber").innerHTML="Số chứng Minh Nhân Dân:  "+identityid.value
+
+        let dateOfBirthvalue=dateOfBirthid.value;
+        document.getElementById("showdateOfBirth").innerHTML="Ngày Tháng Năm Sinh:  "+dateOfBirthid.value;
+
+        let emailvalue=emailid.value;
+        document.getElementById("showemail").innerHTML="email:  "+emailid.value;
+
+        let addressvalue=addressid.value;
+        document.getElementById("showaddress").innerHTML="address:  "+addressid.value;
+
+        let Customervalue=customerid.value;
+        document.getElementById("showCustomer").innerHTML="Customer:  "+customerid.value;
+
+
+        let discountvalue=discountid.value;
+        document.getElementById("showdiscount").innerHTML="Customer:  "+discountid.value;
+
+        let quantityIncludedvalue=quantityIncludedid.value;
+        document.getElementById("showdquantityIncluded").innerHTML="Customer:  "+quantityIncludedid.value;
+
+        let renDayvalue=renDayid.value;
+        document.getElementById("showrenDay").innerHTML="Customer:  "+renDays.value;
+
+        let serviceidvalue=serviceid.value;
+        document.getElementById("showservice").innerHTML="Customer:  "+serviceid.value;
+
+        let roomTypeForRentvalue=roomTypeForRentid.value;
+        document.getElementById("showroomTypeForRent").innerHTML="Customer:  "+roomTypeForRentid.value;
+
+
+
+
+
+    }
+
+
+
+</script>
+
+</body>
+</html>
