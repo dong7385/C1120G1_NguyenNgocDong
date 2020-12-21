@@ -17,12 +17,62 @@
     let discount;
     let quantityIncluded;
     let renDays;
-
+    let check=false;
+    let tempName="";
 
     name = prompt("Input name:  ");
-    cmnd = prompt("Input cmnd:  ");
-    birthday = prompt("Input birthday:  ");
-    let check=false
+    name=name.trim().toLowerCase();
+    for(let i=0;i<name.length;i++){
+        if(name.charAt(i)===" "&& name.charAt(i+1)===" "){
+            continue;
+    }
+    if(i===0 || name.chart(i-1)===" "){
+        tempName+=name.charAt(i).toUpperCase();
+        continue;
+    }
+    tempName+= name.charAt(i);
+    alert(tempName+= name.charAt(i))
+    }
+    name=tempName;
+    do{
+        cmnd = prompt("Input Cmnd:  ");
+        if(!isNaN(cmnd)){
+            cmnd=Number.parseFloat(cmnd);
+        }
+        if(!Number.isInteger(cmnd)){
+            alert("CMND khong dung dinh dang");
+            continue;
+        }
+        if(cmnd<10000000 ||cmnd>99999999){
+            alert("CMND khong dung dinh dang");
+            continue;
+        }
+        check=true;
+    }while(!check)
+    check=false;
+    do{
+        birthday = prompt("Input birthday:  ");
+        if(birthday.charAt(2)==="/"&& birthday.charAt(5)==="/"){
+            let day=birthday.substring(0,2);
+            let month=birthday.substring(3,5);
+            let year=birthday.substring(6,10);
+            if(!isNaN(day)&&!isNaN(month)&&!isNaN(year)){
+                day=Number.parseFloat(day);
+                month=Number.parseFloat(month);
+                year=Number.parseFloat(year);
+                if(Number.isInteger(day)&&Number.isInteger(month)&&Number.isInteger(year)){
+                    if(day<32&&month<13&&year>1956){
+                        check=true;
+                    }
+                }
+            }
+        }
+        if(!check){
+            alert("ngay sinh khong dung dinh dang");
+        }
+    }while(!check)
+    check=false;
+
     let countAt=0;
     let countDoc=0;
     do{
@@ -45,14 +95,38 @@
         }
 
     }while (!check);
+    check=false;
 
     addresss = prompt("Input addresss:  ");
     typeservice = prompt("Input typeservice:  ");
     typeRoom = prompt("Input typeRoom:  ");
     typeCustomer = prompt("Input typeCustomer:  ");
     discount = prompt("Input discount:  ");
-    quantityIncluded = prompt("Input quantityIncluded:  ");
-    renDays = prompt("Input renDays:  ");
+    do{
+        quantityIncluded = prompt("Input quantityIncluded:  ");
+        if(!isNaN(quantityIncluded)){
+            quantityIncluded=Number.parseFloat(quantityIncluded);
+            if(Number.isInteger(quantityIncluded)){
+                check=true;
+            }
+        }
+        if(!check)
+            alert("quantityIncluded khong phai la so nguyen duong")
+    }while(!check)
+    check=false;
+
+    do{
+        renDays = prompt("Input renDays:  ");
+        if(!isNaN(renDays)){
+            renDays=Number.parseFloat(renDays);
+            if(Number.isInteger(renDays)){
+                check=true;
+            }
+        }
+        if(!check)
+            alert("rendays khong phai la so nguyen duong")
+    }while(!check)
+   check=false;
 
 </script>
 
