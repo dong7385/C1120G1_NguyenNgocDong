@@ -106,8 +106,44 @@
                  "quantityIncluded:  " + quantityIncluded +"\n"+
                  "renDays:  " + renDays );
               default:{
-                  alert("su lua chon")
+                  alert("su_lua")
               }
+          case 3:
+            let money=0;
+            if(typeservice==="Villa"){
+                money=500;
+            }else if(typeservice==="House"){
+                money=300;
+            }else if(typeservice==="Room"){
+                money=100;
+            }
+              let temp =0;
+              if(typeservice==="Đà Nẵng"){
+                  temp+=20;
+              }else if(typeservice==="Huế"){
+                  temp+=10;
+              }else if(typeservice==="Quảng Nam"){
+                  temp+=5;
+              }
+              if(renDays>7){
+                  temp+=20;
+              }else if(renDays>2){
+                  temp+=10;
+              }
+              if(typeCustomer==="Diaamond"){
+                  temp+=15;
+              }else if(typeCustomer==="Platium"){
+                  temp+=10;
+              }else if(typeCustomer==="Gold"){
+                  temp+=5;
+              }else if(typeCustomer==="Silver"){
+                  temp+=2;
+              }else if(typeCustomer==="Member"){
+                  temp+=0;
+              }
+
+              alert("Total pay:"+(money*renDays-temp));
+              break;
          }
 </script>
 

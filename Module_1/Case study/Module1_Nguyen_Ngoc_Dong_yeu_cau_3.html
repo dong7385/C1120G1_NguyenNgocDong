@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let addresss;
+    let typeservice;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let quantityIncluded;
+    let renDays;
+
+
+    name = prompt("Input name:  ");
+    cmnd = prompt("Input cmnd:  ");
+    birthday = prompt("Input birthday:  ");
+    let check=false
+    let countAt=0;
+    let countDoc=0;
+    do{
+        email = prompt("Input email:  ");
+        for(let i=0;i<email.length;i++){
+            if(email.charAt(i)==="@"){
+                countAt++;
+                for (let j=i+1;j<email.length;j++){
+                    if(email.charAt(j)==="."){
+                        countDoc++;
+                    }
+                }
+                if(countAt!=1||countDoc<1){
+                    alert("Email ban nhap khong dung")
+                }else{
+                    alert(check=true);
+                }
+
+            }
+        }
+
+    }while (!check);
+
+    addresss = prompt("Input addresss:  ");
+    typeservice = prompt("Input typeservice:  ");
+    typeRoom = prompt("Input typeRoom:  ");
+    typeCustomer = prompt("Input typeCustomer:  ");
+    discount = prompt("Input discount:  ");
+    quantityIncluded = prompt("Input quantityIncluded:  ");
+    renDays = prompt("Input renDays:  ");
+
+</script>
+
+</body>
+</html>
