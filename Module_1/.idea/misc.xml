@@ -3,4 +3,11 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/Bai_13/Bai_tap/luyen tap 2/dao_nguoc_phan_tu_trong_mangn.html" />
+    <file url="file://$PROJECT_DIR$/Bai_13/Bai_tap/luyen tap 2/dem_so_ki_tu_trong_mang.html" />
+    <file url="file://$PROJECT_DIR$/Bai_13/Bai_tap/luyen tap 2/dem_so_tu_trong_mot_chuoi.html" />
+    <file url="file://$PROJECT_DIR$/Bai_13/Bai_tap/luyen tap 2/Kiem_tra_2_chuoi_co_giong_nhau.html" />
+    <file url="file://$PROJECT_DIR$/Bai_13/Bai_tap/luyen tap 2/timKiTuThayTHe.html" />
+  </component>
 </project>
