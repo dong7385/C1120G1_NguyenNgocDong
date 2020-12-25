@@ -17,116 +17,115 @@
     let discount;
     let quantityIncluded;
     let renDays;
-    let check=false;
-    let tempName="";
+    let check = false;
+    let tempName = "";
 
     name = prompt("Input name:  ");
-    name=name.trim().toLowerCase();
-    for(let i=0;i<name.length;i++){
-        if(name.charAt(i)===" "&& name.charAt(i+1)===" "){
+    name = name.trim().toLowerCase();
+    for (let i = 0; i < name.length; i++) {
+        if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+            continue;                                           //Phương thức charAt() trả về ký tự từ chỉ mục (index) đã xác định.
+        }                                                           //string.charAt(index);
+        if (i === 0 || name.chart(i - 1) === " ") {
+            tempName += name.charAt(i).toUpperCase();
             continue;
+        }
+        tempName += name.charAt(i);
     }
-    if(i===0 || name.chart(i-1)===" "){
-        tempName+=name.charAt(i).toUpperCase();
-        continue;
-    }
-    tempName+= name.charAt(i);
-    alert(tempName+= name.charAt(i))
-    }
-    name=tempName;
-    do{
+    name = tempName;
+    do {
         cmnd = prompt("Input Cmnd:  ");
-        if(!isNaN(cmnd)){
-            cmnd=Number.parseFloat(cmnd);
+        if (!isNaN(cmnd)) {
+            cmnd = Number.parseFloat(cmnd);
         }
-        if(!Number.isInteger(cmnd)){
+        if (!Number.isInteger(cmnd)) {
             alert("CMND khong dung dinh dang");
             continue;
         }
-        if(cmnd<10000000 ||cmnd>99999999){
+        if (cmnd < 10000000 || cmnd > 99999999) {
             alert("CMND khong dung dinh dang");
             continue;
         }
-        check=true;
-    }while(!check)
-    check=false;
-    do{
+        check = true;
+    } while (!check)
+    check = false;
+    do {
         birthday = prompt("Input birthday:  ");
-        if(birthday.charAt(2)==="/"&& birthday.charAt(5)==="/"){
-            let day=birthday.substring(0,2);
-            let month=birthday.substring(3,5);
-            let year=birthday.substring(6,10);
-            if(!isNaN(day)&&!isNaN(month)&&!isNaN(year)){
-                day=Number.parseFloat(day);
-                month=Number.parseFloat(month);
-                year=Number.parseFloat(year);
-                if(Number.isInteger(day)&&Number.isInteger(month)&&Number.isInteger(year)){
-                    if(day<32&&month<13&&year>1956){
-                        check=true;
+        if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
+            let day = birthday.substring(0, 2)    //indexStart bằng indexEnd, substring() trả về 1 chuỗi rỗng
+            let month = birthday.substring(3, 5);  // phương thức trả về chuỗi con của 1 chuỗi
+            let year = birthday.substring(6, 10);  // bắt đầu từ vị trí bắt đầu đến vị trí kết thúc
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                year = Number.parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day < 32 && month < 13 && year > 1956) {
+                        check = true;
                     }
                 }
             }
         }
-        if(!check){
+        if (!check) {
             alert("ngay sinh khong dung dinh dang");
         }
-    }while(!check)
-    check=false;
+    } while (!check)
+    check = false;
 
-    let countAt=0;
-    let countDoc=0;
-    do{
+    let countAt = 0;
+    let countDoc = 0;
+    do {
         email = prompt("Input email:  ");
-        for(let i=0;i<email.length;i++){
-            if(email.charAt(i)==="@"){
+        for (let i = 0; i < email.length; i++) {
+            if (email.charAt(i) === "@") {
                 countAt++;
-                for (let j=i+1;j<email.length;j++){
-                    if(email.charAt(j)==="."){
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) === ".") {
                         countDoc++;
                     }
                 }
-                if(countAt!=1||countDoc<1){
+                if (countAt != 1 || countDoc < 1) {
                     alert("Email ban nhap khong dung")
-                }else{
-                    alert(check=true);
+                } else {
+                    alert(check = true);
                 }
 
             }
         }
 
-    }while (!check);
-    check=false;
+    } while (!check);
+    check = false;
 
     addresss = prompt("Input addresss:  ");
     typeservice = prompt("Input typeservice:  ");
     typeRoom = prompt("Input typeRoom:  ");
     typeCustomer = prompt("Input typeCustomer:  ");
     discount = prompt("Input discount:  ");
-    do{
+    do {
         quantityIncluded = prompt("Input quantityIncluded:  ");
-        if(!isNaN(quantityIncluded)){
-            quantityIncluded=Number.parseFloat(quantityIncluded);
-            if(Number.isInteger(quantityIncluded)){
-                check=true;
+        if (!isNaN(quantityIncluded)) {
+            quantityIncluded = Number.parseFloat(quantityIncluded);
+            if (Number.isInteger(quantityIncluded)) {
+                check = true;
             }
         }
-        if(!check)
+        if (!check)
             alert("quantityIncluded khong phai la so nguyen duong")
-    }while(!check)
-    check=false;
+    } while (!check)
+    check = false;
 
-    do{
+    do {
         renDays = prompt("Input renDays:  ");
-        if(!isNaN(renDays)){
-            renDays=Number.parseFloat(renDays);
-            if(Number.isInteger(renDays)){
-                check=true;
+        if (!isNaN(renDays)) {
+            renDays = Number.parseFloat(renDays);
+            if (Number.isInteger(renDays)) {
+                check = true;
             }
         }
-        if(!check)
+        if (!check)
             alert("rendays khong phai la so nguyen duong")
-    }while(!check)
-   check=false;
+    } while (!check)
+    check = false;
 
 </script>
 

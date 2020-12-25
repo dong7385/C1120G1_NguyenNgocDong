@@ -11,21 +11,43 @@
 
 <script>
     let array = [-3, 5, 1, 3, 2, 10];
-    let check=false;
+    // let check=false;
+    //
+    // n=parseInt(prompt("nhap vao so bat ki"));
+    //
+    // for(let i=0;i<array.length;i++){
+    //     if(n==array[i]){
+    //         check=true;
+    //         break;
+    //     }
+    // }
+    //     if(check==true){
+    //         alert(n+"nam trong mang");
+    //     }
+    //     else
+    //         alert(n+"khong nam trong mang");
 
-    n=parseInt(prompt("nhap vao so bat ki"));
 
-    for(let i=0;i<array.length;i++){
-        if(n==array[i]){
-            check=true;
-            break;
+
+
+   let v=parseInt(prompt("nhap vao so bat ki"));
+    function checkNumber(n) {
+        let check=false;
+        for(let i=0;i<array.length;i++){
+            if(n==array[i]){
+                check=true;
+                break;
+            }
         }
-    }
-        if(check==true){
-            alert(n+"nam trong mang");
+        if(check){
+           return true;
         }
         else
-            alert(n+"khong nam trong mang");
+          return  false;
+    }
+    let result=checkNumber(v);
+    alert(result)
+
 </script>
 
 
