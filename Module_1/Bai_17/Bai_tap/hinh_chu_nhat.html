@@ -19,7 +19,7 @@
        getchuVi(){
            return (this.chieuDai+this.chieuRong)*2;
        }
-       getCanvas(){
+       getCanvas1(){
            let canvasobj= document.getElementById("canvasShape")
            let context = canvasobj.getContext("2d");
            context.rect(150,150,this.chieuDai,this.chieuRong);
@@ -31,7 +31,8 @@
    let hinhChuNhat1=new HinhChuNhat(1125,118);
    alert(hinhChuNhat1.getdienTich());
    alert(hinhChuNhat1.getchuVi());
-   hinhChuNhat1.getCanvas();
+   hinhChuNhat1.getCanvas1();
+
 
 </script>
 

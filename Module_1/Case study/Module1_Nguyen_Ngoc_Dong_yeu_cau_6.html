@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    let  arrListCustomer= [];
+    let arrListCustomer = [];
 
     let name;
     let idCard;
@@ -35,6 +35,7 @@
             this.quantityIncluded = quantityIncluded;
             this.renDays = renDays;
             this.totalPay = totalPay;
+
         }
 
         getName() {
@@ -61,11 +62,12 @@
             this.birthday = birthday;
         }
 
-        getEmail(){
+        getEmail() {
             return this.email;
         }
-        setEmail(email){
-            this.email=email;
+
+        setEmail(email) {
+            this.email = email;
         }
 
         getAddress() {
@@ -104,8 +106,8 @@
             return this.discount;
         }
 
-        setDiscount(discount) {
-            this.discount = discount;
+        setDiscount() {
+            this.discount = this.calculateDisCount();
         }
 
         getQuantityIncluded() {
@@ -125,51 +127,55 @@
         }
 
         getTotalPay() {
-            return this.totalPay;
+            return this.calculateTotalPay;          // aiza
         }
 
         setTotalPay() {
+
             this.totalPay = this.calculateTotalPay;
         }
-
-        calculateTotalPay() {
+        calculateTotalPay(){
+            let money;
             let amount;
-            let money = 0;
-            if (typeservice === "Villa") {
+            if (this.setTypeServer=== "Villa") {
                 money = 500;
-            } else if (typeservice === "House") {
+            } else if (this.setTypeServer === "House") {
                 money = 300;
-            } else if (typeservice === "Room") {
+            } else if (this.setTypeServer === "Room") {
                 money = 100;
             }
+            amount = money * this.rentDays - this.discount;
+            return amount;
+
+        }
+        calculateDisCount() {
             let temp = 0;
-            if (addresss === "Đà Nẵng") {
+            if (this.address === "Đà Nẵng") {
                 temp += 20;
-            } else if (addresss === "Huế") {
+            } else if (this.address === "Huế") {
                 temp += 10;
-            } else if (addresss === "Quảng Nam") {
+            } else if (this.address === "Quảng Nam") {
                 temp += 5;
             }
-            if (renDays > 7) {
+            if (this.renDays > 7) {
                 temp += 30;
-            } else if (renDays > 5) {
+            } else if (this.renDays  > 5) {
                 temp += 20;
-            } else if (renDays > 2) {
+            } else if (this.renDays  > 2) {
                 temp += 10
             }
-            if (typeCustomer === "Diaamond") {
+            if (this.typeCustomer === "Diaamond") {
                 temp += 15;
-            } else if (typeCustomer === "Platium") {
+            } else if (this.typeCustomer === "Platium") {
                 temp += 10;
-            } else if (typeCustomer === "Gold") {
+            } else if (this.typeCustomer === "Gold") {
                 temp += 5;
-            } else if (typeCustomer === "Silver") {
+            } else if (this.typeCustomer === "Silver") {
                 temp += 2;
-            } else if (typeCustomer === "Member") {
+            } else if (this.typeCustomer === "Member") {
                 temp += 0;
             }
-            amount = (money * renDays - temp);
-            return amount;
+            return temp;
         }
     }
 
@@ -202,12 +208,11 @@
                     deleteCustomer();
                     break;
                 case 6:
-                    deleteCustomer();
-                    flag = false;
-                    break;
+                    return
                 default:
                     alert("Failed");
                     break;
+                    flag = false;
             }
         } while (flag === true);
     }
@@ -221,7 +226,7 @@
             if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
                 continue;                                           //Phương thức charAt() trả về ký tự từ chỉ mục (index) đã xác định.
             }                                                           //string.charAt(index);
-            if (i === 0 || name.chart(i - 1) === " ") {
+            if (i === 0 || name.charAt(i - 1) === " ") {
                 tempName += name.charAt(i).toUpperCase();
                 continue;
             }
@@ -330,100 +335,119 @@
 
     function displayCustomers() {
         let list = "";
-        for (let i = 0; i < arrListCustomer.length; i++) {
+        let index;
 
-            list += "name:  " + arrListCustomer[i].getName() + "\n" +
-                "idCard:  " + arrListCustomer[i].getIdCard() + "\n" +
-                "birthday:  " + arrListCustomer[i].getBirthday()+ "\n" +
-                "email:  " + arrListCustomer[i].getEmail()+ "\n" +
-                "address:  " + arrListCustomer[i].getAddress()+ "\n" +
-                "typeservice:  " + arrListCustomer[i].getTypeServer()+ "\n" +
-                "typeRoom:  " + arrListCustomer[i].getTypeRoom() + "\n" +
-                "typeCustomer:  " + arrListCustomer[i].getTypeCustomer() + "\n" +
-                "discount:  " + arrListCustomer[i].getDiscount() + "\n" +
-                "quantityIncluded:  " + arrListCustomer[i].getQuantityIncluded()+ "\n" +
-                "renDays:  " + arrListCustomer[i].getRenDays() + "\n\n";
+        for (let i = 0; i < arrListCustomer.length; i++) {
+            list += (i + 1) + " : " + arrListCustomer[i].getName() + "\n";
         }
-        alert(list);
+        let chooseDisplay = parseInt(prompt(list));
+        index = chooseDisplay - 1
+        alert("1.name:  " + arrListCustomer[index].getName() + "\n" +
+            "2.cmnd:  " + arrListCustomer[index].getIdCard() + "\n" +
+            "3.birthday:  " + arrListCustomer[index].getBirthday() + "\n" +
+            "4.email:  " + arrListCustomer[index].getEmail() + "\n" +
+            "5.address:  " + arrListCustomer[index].getAddress() + "\n" +
+            "6.typeservice:  " + arrListCustomer[index].getTypeServer() + "\n" +
+            "7.typeRoom:  " + arrListCustomer[index].getTypeRoom() + "\n" +
+            "8.typeCustomer:  " + arrListCustomer[index].getTypeCustomer() + "\n" +
+            "9.discount:  " + arrListCustomer[index].getDiscount() + "\n" +
+            "10.quantityIncluded:  " + arrListCustomer[index].getQuantityIncluded() + "\n" +
+            "11.renDays:  " + arrListCustomer[index].getRenDays());
+        displayMainMenu()
     }
 
     function editCustomer() {
         let list = "";
+        let index;
+
         for (let i = 0; i < arrListCustomer.length; i++) {
-
-            list += (i + 1) + ":  " + arrListCustomer[i].getName() + "\n";
-
+            list += (i + 1) + " : " + arrListCustomer[i].getName() + "\n";
         }
-        let input = prompt(list);
-        let index = input - 1;
-
-        let editlist;
+        let chooseDisplay = parseInt(prompt(list));
+        index = chooseDisplay - 1;
         do {
             check = true;
-
-            editlist = "Hay chon thong tin muon chinh sua ben duoi" + "\n" +
-                "1.name:  " + "\n" +
-                "2.cmnd:  " + "\n" +
-                "3.birthday:  " + "\n" +
-                "4.email:  " + "\n" +
-                "5.address:  " + "\n" +
-                "6.typeservice:  " + "\n" +
-                "7.typeRoom:  " + "\n" +
-                "8.typeCustomer:  " + "\n" +
-                "9.discount:  " + "\n" +
-                "10.quantityIncluded:  " + "\n" +
-                "11.renDays:  " + "\n\n";
-            let input1 = prompt(editlist);
-            switch (input1) {
-                case '1':
+            let chooseEdit = parseInt(prompt(
+                "1.name:  " + arrListCustomer[index].getName() + "\n" +
+                "2.cmnd:  " + arrListCustomer[index].getIdCard() + "\n" +
+                "3.birthday:  " + arrListCustomer[index].getBirthday() + "\n" +
+                "4.email:  " + arrListCustomer[index].getEmail() + "\n" +
+                "5.address:  " + arrListCustomer[index].getAddress() + "\n" +
+                "6.typeservice:  " + arrListCustomer[index].getTypeServer() + "\n" +
+                "7.typeRoom:  " + arrListCustomer[index].getTypeRoom() + "\n" +
+                "8.typeCustomer:  " + arrListCustomer[index].getTypeCustomer() + "\n" +
+                "9.discount:  " + arrListCustomer[index].getDiscount() + "\n" +
+                "10.quantityIncluded:  " + arrListCustomer[index].getQuantityIncluded() + "\n" +
+                "11.renDays:  " + arrListCustomer[index].getRenDays()));
+            switch (chooseEdit) {
+                case 1:
                     let name = prompt("Enter name");
                     arrListCustomer[index].setName(name);
                     break;
-                case '2':
+                case 2:
                     let idCard = prompt("Enter cmnd");
-                    arrListCustomer[index].setIdCard(idCard)
+                    arrListCustomer[index].setIdCard(idCard);
                     break;
-                case '3':
+                case 3:
                     let birthday = prompt("Enter birthday");
                     arrListCustomer[index].setBirthday(birthday);
                     break;
-                case '4':
+                case 4:
                     let email = prompt("Enter email");
                     arrListCustomer[index].setEmail(email);
                     break;
-                case '5':
-                    let addresss = prompt("Enter addresss");
+                case 5:
+                    let address = prompt("Enter addresss");
                     arrListCustomer[index].setAddress(address);
                     break;
-                case '6':
-                    let typeservice = prompt("Enter typeservice");
-                    arrListCustomer[index].setTypeServer(typeServer);
+                case 6:
+                    let typeService = prompt("Enter typeservice");
+                    arrListCustomer[index].setTypeServer(typeService);
                     break;
-                case '7':
+                case 7:
                     let typeRoom = prompt("Enter typeRoom");
-                    arrListCustomer[index][6] = typeRoom;
+                    arrListCustomer[index].setTypeRoom(typeRoom);
                     break;
-                case '8':
+                case 8:
                     let typeCustomer = prompt("Enter typeCustomer");
-
-
-                    arrListCustomer[index][7] = typeCustomer;
+                    arrListCustomer[index].setTypeCustomer(typeCustomer)
                     break;
-                case '9':
+                case 9:
                     let discount = prompt("Enter discount");
-                    arrListCustomer[index][8] = discount;
+                    arrListCustomer[index].setDiscount(discount);
                     break;
-                case '10':
+                case 10:
                     let quantityIncluded = prompt("Enter quantityIncluded");
-                    arrListCustomer[index][9] = quantityIncluded;
+                    arrListCustomer[index].setQuantityIncluded(quantityIncluded);
                     break;
-                case '11':
+                case 11:
                     let renDays = prompt("Enter renDays");
-                    arrListCustomer[index][10] = renDays;
+                    arrListCustomer[index].setRenDays(renDays);
                     break;
             }
-        } while (!check);
+        }
+        while (!check) ;
         displayCustomers();
+    }
+
+    function deleteCustomer() {
+
+        let list = "";
+        let index;
+
+        for (let i = 0; i < arrListCustomer.length; i++) {
+            list += (i + 1) + " : " + arrListCustomer[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(list));
+        index = chooseDisplay - 1;
+        let check = parseInt(prompt("Ban co muon xoa thong tin khach hang" + "\n 1.yes  2.NO"));
+        if (check === 1) {
+            arrListCustomer.splice(index, 1);
+            alert("Ban da xoa thanh cong")
+        } else
+            alert("Cancel");
+
+        displayMainMenu();
     }
 
 
