@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6615d520-61f8-4ea1-9ccd-06ca98b3d81f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Module_1/test_moudle1/Cau_4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/.idea/c11g-javascript-function.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/check_array_prime_number.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/my_lib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/pass_by/pass_by_reference.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/pass_by/pass_by_value.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/print_20_prime_number.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/test_string_or_number.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/.idea/c11g-review.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/20_fibo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/check_fibo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/display_customer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/fibo_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Bai_12/Thuc_hanh/sort.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/Bai_12/Thuc_hanh/sort.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Case study/Module1_Nguyen_Ngoc_Dong_yeu_cau_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/Case study/Module1_Nguyen_Ngoc_Dong_yeu_cau_6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/File tổng hợp/~$u hỏi audit module 1-BP2.0.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module_1/Ontap/khoi _tao_mang_co_dieu_kien.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/Ontap/khoi _tao_mang_co_dieu_kien.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/Dong-cornell note 30112020.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mNu1Tm2SiJhSmu61ltqkZg1wK6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="Moudule_2" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="Moudule_2" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6615d520-61f8-4ea1-9ccd-06ca98b3d81f" name="Default Changelist" comment="" />
+      <created>1609346154257</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609346154257</updated>
+      <workItem from="1609346159017" duration="67000" />
+      <workItem from="1609377988211" duration="1027000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="83" key="FileChooserDialogImpl" timestamp="1609383489127">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="83" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1609383489127" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1609378175671">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1609378175671" />
+    <state x="91" y="0" key="new project wizard" timestamp="1609383493786">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1609383493786" />
+  </component>
+</project>

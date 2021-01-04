@@ -127,17 +127,18 @@
         }
 
         getTotalPay() {
-            return this.calculateTotalPay;          // aiza
+            return this.calculateTotalPay;
         }
 
         setTotalPay() {
 
             this.totalPay = this.calculateTotalPay;
         }
-        calculateTotalPay(){
+
+        calculateTotalPay() {
             let money;
             let amount;
-            if (this.setTypeServer=== "Villa") {
+            if (this.setTypeServer === "Villa") {
                 money = 500;
             } else if (this.setTypeServer === "House") {
                 money = 300;
@@ -148,6 +149,7 @@
             return amount;
 
         }
+
         calculateDisCount() {
             let temp = 0;
             if (this.address === "Đà Nẵng") {
@@ -159,9 +161,9 @@
             }
             if (this.renDays > 7) {
                 temp += 30;
-            } else if (this.renDays  > 5) {
+            } else if (this.renDays > 5) {
                 temp += 20;
-            } else if (this.renDays  > 2) {
+            } else if (this.renDays > 2) {
                 temp += 10
             }
             if (this.typeCustomer === "Diaamond") {

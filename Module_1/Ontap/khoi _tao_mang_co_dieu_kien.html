@@ -13,11 +13,11 @@
     let index = 0;
     let i;
     do{
-        n=parseInt(prompt("nhap so luong cac phan tu trong mang"));
+        n=parseInt(prompt("nhap so luong "));
     }while(n<1||n>20)
     for (i = 0; i < n; i++) {
         a[i] = parseInt(prompt("so phan tu nhap vao"));
-        if (i == 0) {
+        if (i === 0) {
             max = a[i];
         }
 

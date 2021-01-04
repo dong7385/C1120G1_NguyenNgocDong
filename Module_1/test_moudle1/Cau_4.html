@@ -21,48 +21,44 @@
             this.gia = gia;
 
         }
+
+        getMaSanPham() {
+            return this.maSanPham;
+        }
+
+        setMaSanPham(maSanPham) {
+            this.maSanPham = maSanPham;
+        }
+
+        getTenSanPham() {
+            return "this.tenSanPham"
+        }
+
+        setTenSanPham(tenSanPham) {
+            this.tenSanPham = tenSanPham;
+        }
+
+        getHangSanXuat() {
+            return this.hangSanXuat;
+        }
+
+        setHangSanXuat(hangSanXuat) {
+            this.hangSanXuat = hangSanXuat;
+        }
+
+        getGia() {
+            return this.gia;
+        }
+
+        setGia(gia) {
+            this.gia = gia;
+        }
+
+        toString() {
+            return this.maSanPham + this.tenSanPham + this.hangSanXuat + this.gia;
+        }
     }
 
-    getName()
-    {
-        return this.maSanPham;
-    }
-
-    setName(maSanPham)
-    {
-        this.maSanPham = maSanPham;
-    }
-    getName()
-    {
-        return "this.tenSanPham"
-    }
-
-    setName(tenSanPham)
-    {
-        this.tenSanPham = tenSanPham;
-    }
-    getName()
-    {
-        return this.hangSanXuat;
-    }
-
-    setName(hangSanXuat)
-    {
-        this.hangSanXuat = hangSanXuat;
-    }
-    getName()
-    {
-        return this.gia;
-    }
-
-    setName(gia)
-    {
-        this.gia = gia;
-    }
-    toString()
-    {
-        return this.maSanPham + this.tenSanPham + this.hangSanXuat + this.gia;
-    }
 
     function addNameCustomer() {
         maSanPham = prompt("Enter maSanPham ");
@@ -75,9 +71,11 @@
         arrListCustomer.push(arrAddNameCustomer);
         alert("Ban da them thanh cong");
     }
+
     displayMainMenu();
     addNameCustomer();
-    check=false;
+    check = false;
+
     function displayMainMenu() {
         let flag = true;
         let choose;
@@ -102,25 +100,25 @@
     }
 
 
-
-
     function displayCustomers() {
         let list = "";
         let index;
         for (let i = 0; i < arrListCustomer.length; i++) {
-            list += (i + 1) + " : " + arrListCustomer[i].getName() + "\n";
+            list += (i + 1) + " : " + arrListCustomer[i].getMaSanPham() + "\n";
         }
         let chooseDisplay = parseInt(prompt(list));
-        index = chooseDisplay - 1
-        alert("1.maSanPham:  " + arrListCustomer[index].getName() + "\n" +
-            "2.tenSanPham:  " + arrListCustomer[index].getIdCard() + "\n" +
-            "3.hangSanXuat:  " + arrListCustomer[index].getBirthday() + "\n" +
-            "4.gia:  " + arrListCustomer[index].getEmail() + "\n"
+        index = chooseDisplay - 1;
+        alert("1.maSanPham:  " + arrListCustomer[index].getMaSanPham() + "\n" +
+            "2.tenSanPham:  " + arrListCustomer[index].getTenSanPham() + "\n" +
+            "3.hangSanXuat:  " + arrListCustomer[index].getHangSanXuat() + "\n" +
+            "4.gia:  " + arrListCustomer[index].getGia() + "\n"
         );
-        displayMainMenu()
+        displayMainMenu();
     }
 
-    displayMainMenu();
+    displayCustomers();
+
+
 </script>
 
 </body>

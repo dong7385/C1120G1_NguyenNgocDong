@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // camelCase: ten bien, ten ham
+        // PascalCase: ten class
+
+        function checkFibo(num) {
+            let f1 = 0;
+            let f2 = 1;
+
+            let flag = false;
+
+            if (num == f1 || num == f2) {
+                return true;
+            }
+
+            while(true) {
+                let tmp = f2;
+                f2 = f1 + f2;
+                f1 = tmp;
+
+                if (num == f2) {
+                    flag = true;
+                    break;
+                } else if (num < f2) {
+                    break;
+                }
+            }
+
+            return flag;
+        }
+
+        console.log(checkFibo(34)); // true
+        console.log(checkFibo(35)); // false
+        console.log(checkFibo(0)); // true
+        console.log(checkFibo(4)); // false
+
+        // Kiem tra mot so co phai la so chinh phuong. Vi du: 25, 36, 81...
+        // Kiem tra mot so co phai la so hoan hao.
+    </script>
+</body>
+</html>

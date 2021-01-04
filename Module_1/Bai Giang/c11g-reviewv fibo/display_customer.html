@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        class Customer {
+            constructor(id, name, gender, dateOfBirth) {
+                this.id = id;
+                this.name = name;
+                this.gender = gender;
+                this.dateOfBirth = dateOfBirth;
+            }
+
+            getId() {
+                return this.id;
+            }
+
+            setId(id) {
+                this.id = id;
+            }
+
+            //...
+
+            getDateOfBirth() {
+                return this.dateOfBirth;
+            }
+
+            setDateOfBirth(dateOfBirth) {
+                this.dateOfBirth = dateOfBirth;
+            }
+
+            calculateMoney() {
+                let priceService = 0;
+
+                // if (this.service == "villa") {
+                //         priceService = 500;
+                // } else if (..) {
+                //         priceService = 300;
+                // }
+                return priceService * this.numDay * 0.5;
+            }
+        }
+
+
+        let arrCus = [];
+
+        function addNewCustomer() {
+            //input
+
+            let id = prompt("Input id: ");
+            let name = prompt("Input name: ");
+            let gender = prompt("Input gender (male/female): ");
+            let dateOfBirth = prompt("Input date of birth: ");
+
+            let customerObj = new Customer(id, name, gender, dateOfBirth);
+
+            arrCus.push(customerObj);
+        }
+
+        function editNewCustomer() {
+            //input
+
+            let id = prompt("Please choose customer to edit - input id: ");
+            let cusIndex;
+
+            for (let i = 0; i < arrCus.length; i++) {
+                if (id === arrCus[i].id) {
+                    cusIndex= i;
+                    break;
+                }
+            }
+            alert("Old info: " + arrCus[cusIndex].id + " " + arrCus[cusIndex].name);
+
+            // C2
+            let chooseInfoToEdit = prompt("1. Id\n" +
+                "2. Name\n" +
+                "3. Gender\n" +
+                "4. Date of birth\n");
+
+            if (chooseInfoToEdit == 1) {
+                let idNew = prompt("Input id: ");
+                arrCus[cusIndex].id = idNew;
+            } else if (chooseInfoToEdit == 2) {
+                let name = prompt("Input name: ");
+                arrCus[cusIndex].name = name;
+            }
+
+            // C1
+            // let idNew = prompt("Input id: ");
+            // let name = prompt("Input name: ");
+            // let gender = prompt("Input gender (male/female): ");
+            // let dateOfBirth = prompt("Input date of birth: ");
+            //
+            // // arrCus[cusIndex] = new Customer(id, name, gender, dateOfBirth);
+            //
+            // arrCus[cusIndex].id = idNew;
+            // arrCus[cusIndex].name = name;
+            // arrCus[cusIndex].gender = gender;
+            // arrCus[cusIndex].dateOfBirth = dateOfBirth;
+        }
+
+        function displayInfoCustomer() {
+
+            let outputStr = "";
+
+            for (let i = 0; i < arrCus.length; i++) {
+                outputStr += arrCus[i].id + " " + arrCus[i].name + "\n";
+            }
+
+            alert(outputStr);
+        }
+
+
+        let flag = true;
+
+        do {
+            let choose = parseInt(prompt("1. Add\n" +
+                "2. Display\n" +
+                "3. Edit\n" +
+                "4. Exit"));
+
+            switch (choose) {
+                case 1:
+                    addNewCustomer();
+                    break;
+                case 2:
+                    displayInfoCustomer();
+                    break;
+                case 3:
+                    editNewCustomer();
+                    break;
+                case 4:
+                    flag = false;
+                    break;
+            }
+        } while (flag);
+        // flag == true
+
+    </script>
+</body>
+</html>
