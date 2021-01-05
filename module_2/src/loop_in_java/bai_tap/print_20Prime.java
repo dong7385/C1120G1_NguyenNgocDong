@@ -10,8 +10,8 @@ public class print_20Prime {
         System.out.println(n);
         int count = 0;
         int num = 2;
-        boolean check = true;
-        while (count <= n) {
+        while (count <n) {
+            boolean check = true;
             for (int i = 2; i <= Math.sqrt(num); i++) {
                 if (num % i == 0) {
                     check = false;
