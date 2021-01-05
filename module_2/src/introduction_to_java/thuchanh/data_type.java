@@ -14,12 +14,11 @@ public class data_type {
         boolean b = true;
         System.out.println("b=" + b);
 
-        char c='a';
-        System.out.println("c=  "+c);
+        char c = 'a';
+        System.out.println("c=  " + c);
 
-        String s="Da Nang";
-        System.out.println("s= "+s);
-
+        String s = "Da Nang";
+        System.out.println("s= " + s);
 
 
     }

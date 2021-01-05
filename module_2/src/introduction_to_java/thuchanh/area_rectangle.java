@@ -7,14 +7,14 @@ public class area_rectangle {
         float width;
         float heigth;
 
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter width");
-        width=scanner.nextFloat();
+        width = scanner.nextFloat();
         System.out.println("Enter heigth");
-        heigth=scanner.nextFloat();
+        heigth = scanner.nextFloat();
 
-        float area=width*heigth;
-        System.out.println("area=  "+area);
+        float area = width * heigth;
+        System.out.println("area=  " + area);
 
 
     }

@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class numbers_to_world {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("hay nhap so can doc");
-        int num=sc.nextInt();
-        switch (num){
+        int num = sc.nextInt();
+        switch (num) {
             case 0:
                 System.out.println("Không");
                 break;
