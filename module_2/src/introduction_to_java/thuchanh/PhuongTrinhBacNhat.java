@@ -2,7 +2,7 @@ package introduction_to_java.thuchanh;
 
 import java.util.Scanner;
 
-public class phuong_trinh_bac_nhat {
+public class PhuongTrinhBacNhat {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Cho phuong trinh duoi dang 'a * x + b = 0', hay nhap hang so :");

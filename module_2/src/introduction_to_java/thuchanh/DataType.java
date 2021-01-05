@@ -1,6 +1,6 @@
 package introduction_to_java.thuchanh;
 
-public class data_type {
+public class DataType {
     public static void main(String[] args) {
         int i = 10;
         System.out.println("i= " + i);

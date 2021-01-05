@@ -2,7 +2,7 @@ package loop_in_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class uoc_chung_lon_nhat {
+public class UocChungLonNhat {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Hãy nhập số a:  ");

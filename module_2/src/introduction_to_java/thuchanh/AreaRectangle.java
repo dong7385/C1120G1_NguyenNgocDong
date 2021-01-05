@@ -2,7 +2,7 @@ package introduction_to_java.thuchanh;
 
 import java.util.Scanner;
 
-public class area_rectangle {
+public class AreaRectangle {
     public static void main(String[] args) {
         float width;
         float heigth;

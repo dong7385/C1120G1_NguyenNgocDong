@@ -1,8 +1,8 @@
-package introduction_to_java.baitap;
+package introduction_to_java.bai_tap;
 
 import java.util.Scanner;
 
-public class show_greeting {
+public class ShowGreeting {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your name");

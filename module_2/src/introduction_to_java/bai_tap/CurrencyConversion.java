@@ -1,10 +1,8 @@
-package introduction_to_java.baitap;
-
-import javafx.scene.transform.Scale;
+package introduction_to_java.bai_tap;
 
 import java.util.Scanner;
 
-public class currency_conversion {
+public class CurrencyConversion {
     public static void main(String[] args) {
         double vnd = 23000;
         double usd;

@@ -1,8 +1,8 @@
-package introduction_to_java.baitap;
+package introduction_to_java.bai_tap;
 
 import java.util.Scanner;
 
-public class numbers_to_world {
+public class NumbersToWorld {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("hay nhap so can doc");

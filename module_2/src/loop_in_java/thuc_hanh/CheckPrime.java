@@ -3,7 +3,7 @@ package loop_in_java.thuc_hanh;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class check_prime {
+public class CheckPrime {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Hãy nhập số bất kì:   ");

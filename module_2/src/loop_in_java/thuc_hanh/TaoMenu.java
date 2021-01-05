@@ -2,7 +2,7 @@ package loop_in_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class tao_menu_chon_lua {
+public class TaoMenu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Menu");

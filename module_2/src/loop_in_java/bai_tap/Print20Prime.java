@@ -2,7 +2,7 @@ package loop_in_java.bai_tap;
 
 import java.util.Scanner;
 
-public class print_20Prime {
+public class Print20Prime {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập n số nguyên tố đàu tiên");

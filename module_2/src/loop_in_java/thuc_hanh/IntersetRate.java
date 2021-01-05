@@ -2,7 +2,7 @@ package loop_in_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class interset_rate {
+public class IntersetRate {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
