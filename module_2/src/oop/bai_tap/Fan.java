@@ -1,13 +1,20 @@
 package oop.bai_tap;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
+import javax.crypto.spec.PSource;
+
 public class Fan {
     final int slow = 1;
     final int medium=2;
     final int fast=3;
-    private int speed;
-    private boolean on;
-    private double radius;
-    private String color;
+    private int speed=slow;
+    private boolean on=false;
+    private double radius=5;
+    private String color="blue";
+
+    public Fan() {
+    }
 
     public int getSpeed() {
         return speed;
@@ -40,4 +47,14 @@ public class Fan {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public static void main(String[] args) {
+        Fan fan1=new Fan();
+        fan1.speed=1;
+        fan1.radius=10;
+        fan1.color="yellow";
+        fan1.on=true;
+        System.out.println(fan1.toString());
+    }
+
 }
