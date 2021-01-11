@@ -6,7 +6,7 @@ public class TestPoint2DAndPoint3D {
         System.out.println(point2D);
         point2D=new Point2D();
         System.out.println(point2D);
-        Point2D point2D1 =new Point3D();
+        Point2D point2D1 =new Point3D(3,4,7);
         System.out.println(point2D1);
 
     }

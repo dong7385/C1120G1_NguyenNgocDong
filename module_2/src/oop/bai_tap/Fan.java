@@ -5,10 +5,10 @@ import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import javax.crypto.spec.PSource;
 
 public class Fan {
-    final int slow = 1;
-    final int medium=2;
-    final int fast=3;
-    private int speed=slow;
+    final int SLOW= 1;
+    final int MEDIUM=2;
+    final int FAST=3;
+    private int speed=SLOW;
     private boolean on=false;
     private double radius=5;
     private String color="blue";
@@ -48,13 +48,18 @@ public class Fan {
         this.color = color;
     }
 
-    public static void main(String[] args) {
-        Fan fan1=new Fan();
-        fan1.speed=1;
-        fan1.radius=10;
-        fan1.color="yellow";
-        fan1.on=true;
-        System.out.println(fan1.toString());
+    @Override
+    public String toString() {
+        if(on){
+            return "Fan{" +
+                    "speed=" + speed +
+                    ", radius=" + radius +
+                    ", color='" + color + '\'' +
+                     ", fan is on}";
+        }else
+             return "Fan{" +
+                ", radius=" + radius +
+                ", color='" + color + '\'' +
+                     ", fan is off}";
     }
-
-}
+   }
