@@ -3,7 +3,7 @@ package stack_queue.thuc_hanh;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class test_queue {
+public class QueueTest {
     public static void main(String[] args) {
         Queue<String> queue = new LinkedList<>();
 

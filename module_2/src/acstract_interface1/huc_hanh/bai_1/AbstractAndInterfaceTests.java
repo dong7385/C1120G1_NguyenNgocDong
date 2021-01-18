@@ -10,7 +10,6 @@ public class AbstractAndInterfaceTests {
             if (animal instanceof Chicken) {
                 Edible edibler = (Chicken) animal;
                 System.out.println(edibler.howToEat());
-
             }
             Fruit[] fruits = new Fruit[2];
             fruits[0] = new Orange();

@@ -2,20 +2,20 @@ package acstract_interface1.bai_tap.resizeable;
 
 import acstract_interface1.bai_tap.Colorable;
 
-public class Square extends Rectangle implements Colorable {
+public class Square2 extends Rectangle2 implements Colorable {
 
-    public Square() {
+    public Square2() {
     }
 
-    public Square(double side) {
+    public Square2(double side) {
         super(side, side);
     }
 
-    public Square(String color, boolean filled, double width, double length) {
+    public Square2(String color, boolean filled, double width, double length) {
         super(color, filled, width, length);
     }
 
-    public Square(double v, String yellow, boolean b) {
+    public Square2(double v, String yellow, boolean b) {
     }
 
     public double getSide() {
@@ -23,8 +23,9 @@ public class Square extends Rectangle implements Colorable {
     }
 
     public void setSide(double side) {
-        setWidth(side);
-        setLength(side);
+        super.setWidth(side);
+        super.setLength(side);
+
     }
     public double getArea() {
         return this.getSide()*this.getSide();
@@ -49,5 +50,13 @@ public class Square extends Rectangle implements Colorable {
     }
     @Override
     public void howToColor() {
+        System.out.println("Color all four sides");
+
     }
+
+//    @Override
+//    public void resize(double percent) {
+//        setSide(getSide() * (1 + percent / 100));
+//    }
+
 }

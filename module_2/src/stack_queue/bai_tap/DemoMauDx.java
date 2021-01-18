@@ -2,7 +2,7 @@ package stack_queue.bai_tap;
 
 import java.util.Stack;
 
-public class KiemTraDauNgoac {
+public class DemoMauDx {
     public static void main(String args[]) {
 
         System.out.println(balancedParenthensies("{(a,b)}"));

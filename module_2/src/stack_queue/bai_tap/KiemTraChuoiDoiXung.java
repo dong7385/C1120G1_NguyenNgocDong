@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class G {
+public class KiemTraChuoiDoiXung {
     public static void main(String[] args) {
         System.out.print("Nhập vào chuỗi cần kiểm tra:");
         Scanner in=new Scanner(System.in);
@@ -13,7 +13,6 @@ public class G {
         for (int i = inputString.length()-1; i >=0; i--) {
             queue.add(inputString.charAt(i));
         }
-        System.out.println(queue);
         String reverseString = "";
         while (!queue.isEmpty()) {
             reverseString = reverseString+queue.remove();

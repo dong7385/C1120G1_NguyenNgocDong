@@ -1,13 +1,13 @@
 package acstract_interface1.bai_tap.resizeable;
 
-public class Shape {
+public class Shape2 {
     private String color = "green";
     private boolean filled = true;
 
-    public Shape() {
+    public Shape2() {
     }
 
-    public Shape(String color, boolean filled) {
+    public Shape2(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
@@ -30,9 +30,10 @@ public class Shape {
 
     @Override
     public String toString() {
-        return "\"A Shape with color of"+getColor()
-                +"and"+(isFilled()?"filled" : "not filled");
+        return "\"A Shape with color of" + getColor()
+                + "and" + (isFilled() ? "filled" : "not filled");
     }
 
-    }
+
+}
 

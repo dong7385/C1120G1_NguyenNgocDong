@@ -1,17 +1,29 @@
-package demo.comparable_and_comparator;
+package stack_queue.thuc_hanh.comparator;
 
-public class Student implements Comparable<Student> {
+import java.util.Comparator;
+
+class Student{
+    private int id;
     private String name;
     private int age;
-    private String birthday;
+    private String address;
 
     public Student() {
     }
 
-    public Student(String name, int age, String birthday) {
+    public Student(int id, String name, int age, String address) {
+        this.id = id;
         this.name = name;
         this.age = age;
-        this.birthday = birthday;
+        this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -30,31 +42,21 @@ public class Student implements Comparable<Student> {
         this.age = age;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getAddress() {
+        return address;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", age=" + age +
-                ", birthday='" + birthday + '\'' +
+                ", address='" + address + '\'' +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Student o) {
-        if (this.getAge()>o.getAge()){
-            return 1;
-        }else if (this.getAge()<o.getAge()){
-            return -1;
-        }else {
-            return 0;
-        }
     }
 }

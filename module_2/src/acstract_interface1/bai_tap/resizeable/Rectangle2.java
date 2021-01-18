@@ -1,18 +1,18 @@
 package acstract_interface1.bai_tap.resizeable;
 
-public class Rectangle extends Shape {
+public class Rectangle2 extends Shape2 implements Resizeable{
     private double width = 1;
     private double length = 1;
 
-    public Rectangle() {
+    public Rectangle2() {
     }
 
-    public Rectangle(double width, double length) {
+    public Rectangle2(double width, double length) {
         this.width = width;
         this.length = length;
     }
 
-    public Rectangle(String color, boolean filled, double width, double length) {
+    public Rectangle2(String color, boolean filled, double width, double length) {
         super(color, filled);
         this.width = width;
         this.length = length;
@@ -50,5 +50,10 @@ public class Rectangle extends Shape {
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        setWidth(getWidth()* (1 + percent / 100));
     }
 }
