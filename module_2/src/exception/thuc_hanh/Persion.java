@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Persion {
     public static void print() throws ArrayIndexOutOfBoundsException, IOException {
         int[] mang = {1, 2};
-        System.out.println(mang[2]); //khi chay mang nay se ban ra 1 exception và chúng ta dung try catch để bắt lỗi,tuy nhiên vì không muốn dùng try catch ơ hàm nay ,
+        System.out.println(mang[1]); //khi chay mang nay se ban ra 1 exception và chúng ta dung try catch để bắt lỗi,tuy nhiên vì không muốn dùng try catch ơ hàm nay ,
         //tạo ra throws ném ra cái lỗi  ArrayIndexOutOfBoundsException
         //hàm nào mà gọi thằng print này thì sẽ bị ném ra 1 exception,ta dùng try catch để bắt lỗi này
     }
