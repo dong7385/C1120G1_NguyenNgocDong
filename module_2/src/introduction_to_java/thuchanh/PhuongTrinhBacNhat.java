@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class PhuongTrinhBacNhat {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Cho phuong trinh duoi dang 'a * x + b = 0', hay nhap hang so :");
+        System.out.println("Cho phuong trinh duoi dang 'a * x + b.csv = 0', hay nhap hang so :");
         System.out.print("nhap a:  ");
         double a = sc.nextDouble();
-        System.out.print("nhap b:  ");
+        System.out.print("nhap b.csv:  ");
         double b = sc.nextDouble();
         System.out.print("nhap c:  ");
         double c = sc.nextDouble();

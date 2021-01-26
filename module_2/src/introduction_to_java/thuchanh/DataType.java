@@ -12,7 +12,7 @@ public class DataType {
         System.out.println("d= " + d);
 
         boolean b = true;
-        System.out.println("b=" + b);
+        System.out.println("b.csv=" + b);
 
         char c = 'a';
         System.out.println("c=  " + c);

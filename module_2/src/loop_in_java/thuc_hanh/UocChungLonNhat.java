@@ -7,7 +7,7 @@ public class UocChungLonNhat {
         Scanner sc = new Scanner(System.in);
         System.out.println("Hãy nhập số a:  ");
         int a = sc.nextInt();
-        System.out.println("hãy nhập so b:  ");
+        System.out.println("hãy nhập so b.csv:  ");
         int b = sc.nextInt();
         a = Math.abs(a);
         b = Math.abs(b);

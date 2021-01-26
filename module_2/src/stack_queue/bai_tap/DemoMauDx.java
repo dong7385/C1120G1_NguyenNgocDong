@@ -5,9 +5,9 @@ import java.util.Stack;
 public class DemoMauDx {
     public static void main(String args[]) {
 
-        System.out.println(balancedParenthensies("{(a,b)}"));
-        System.out.println(balancedParenthensies("{(a},b)"));
-        System.out.println(balancedParenthensies("{)(a,b}"));
+        System.out.println(balancedParenthensies("{(a,b.csv)}"));
+        System.out.println(balancedParenthensies("{(a},b.csv)"));
+        System.out.println(balancedParenthensies("{)(a,b.csv}"));
     }
 
     public static boolean balancedParenthensies(String s) {

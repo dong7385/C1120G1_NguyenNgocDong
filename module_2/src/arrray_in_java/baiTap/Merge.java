@@ -11,7 +11,7 @@ public class Merge {
 
         System.out.println("---Nhập mảng a---");
         a = input(a);
-        System.out.println("---Nhập mảng b---");
+        System.out.println("---Nhập mảng b.csv---");
         b = input(b);
         c = merge(a, b);
         show(c);
