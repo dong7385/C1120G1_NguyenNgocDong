@@ -4,7 +4,7 @@ import java.io.Serializable;
 //import java.util.concurrent.atomic.AtomicInteger;
 
 public class Product implements Serializable {
-    private static final AtomicInteger atomicInteger = new AtomicInteger(0);
+
 
     private int id;
     private String name;
@@ -15,7 +15,7 @@ public class Product implements Serializable {
     public Product(){}
 
     public Product(String name, String manufacturer, String price, String description) {
-        this.id= atomicInteger.incrementAndGet();
+
         this.name = name;
         this.manufacturer = manufacturer;
         this.price = price;
