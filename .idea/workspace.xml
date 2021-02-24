@@ -2,31 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6615d520-61f8-4ea1-9ccd-06ca98b3d81f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Module_1/test_moudle1/Cau_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/.idea/c11g-javascript-function.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/check_array_prime_number.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/my_lib.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/pass_by/pass_by_reference.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/pass_by/pass_by_value.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/print_20_prime_number.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-javascript-function/test_string_or_number.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/.idea/c11g-review.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/20_fibo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/check_fibo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/display_customer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai Giang/c11g-review/fibo_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Bai_12/Thuc_hanh/sort.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/Bai_12/Thuc_hanh/sort.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Case study/Module1_Nguyen_Ngoc_Dong_yeu_cau_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/Case study/Module1_Nguyen_Ngoc_Dong_yeu_cau_6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/File tổng hợp/~$u hỏi audit module 1-BP2.0.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/Ontap/khoi _tao_mang_co_dieu_kien.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/Ontap/khoi _tao_mang_co_dieu_kien.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/Dong-cornell note 30112020.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/Furama2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/commons/FuncWriteAndRead.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/commons/regexExceptions/Nhap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/commons/regexExceptions/ValidateException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/controllers/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/data/Customer.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/exception/CompareByName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/exception/EmailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/exception/GenderException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/exception/IdCardException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/exception/NameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/exception/nhap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/models/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/models/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/models/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/models/Services.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/models/Villa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/service/BookingManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/service/CustomerManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/service/HouseManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/service/RoomManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Furama2/src/service/VillaManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FuramaResort/FuramaResort.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FuramaResort/src/commons/FunctionReadAndWrite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FuramaResort/src/service/VillaManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_2/src/SOLID/SOLID.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/commons/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/commons/ReadAndWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/data/House.csv" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/data/House.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/data/Room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/data/Room.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/data/Villa.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/models/ExtraService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/models/ExtraService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/models/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/models/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/models/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/models/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuramaResort/src/models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/FuramaResort/src/models/Villa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/Triển khai lơp mới/CaseStudy/CG-DN CaseStudy Furama Resort Module 2_v2.0.docx" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/Triển khai lơp mới/CaseStudy/CG-DN CaseStudy Furama Resort Module 2_v2.0.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager">
@@ -109,6 +127,7 @@
       <updated>1609346154257</updated>
       <workItem from="1609346159017" duration="67000" />
       <workItem from="1609377988211" duration="1027000" />
+      <workItem from="1612281352551" duration="24000" />
     </task>
     <servers />
   </component>
