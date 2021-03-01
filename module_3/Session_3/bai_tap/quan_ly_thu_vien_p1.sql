@@ -2,13 +2,13 @@ drop database if exists session_3_quan_ly_thu_vien;
 create database session_3_quan_ly_thu_vien;
 use session_3_quan_ly_thu_vien;
 
-create table Student (
-student_number varchar(15) primary key,
-student_name varchar(50) ,
-city varchar(255),
-country varchar (255),
-email varchar(50),
-image varchar (8000)
+CREATE TABLE Student (
+    student_number VARCHAR(15) PRIMARY KEY,
+    student_name VARCHAR(50),
+    city VARCHAR(255),
+    country VARCHAR(255),
+    email VARCHAR(50),
+    image VARCHAR(8000)
 );
 
 create table Category(
