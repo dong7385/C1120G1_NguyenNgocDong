@@ -62,9 +62,9 @@ foreign key(idBoPhan)references BoPhan(idBoPhan)
 
 insert into NhanVien(hoTen,idViTri,idTrinhDo,idBoPhan,ngaySinh,soCmnd,luong,sdt,email,diaChi)
 value
-('Nguyễn Văn A',1,1,3,'1990-12-12',201535456,300,0905222321,'A@gmail.com','Đà Nẵng'),
-('Nguyễn Văn B',5,3,4,'1987-12-12',201534444,10000,0905123456,'B@gmail.com','Hà Tĩnh'),
-('Nguyễn Văn C',5,3,4,'1987-12-12',201534449,10000,0905123956,'C@gmail.com','Quảng Bình');
+('Nguyen van Teo',1,1,3,'1990-12-12',201535456,300,0905222321,'A@gmail.com','Đà Nẵng'),
+('Trong Khiem',5,3,4,'1987-12-12',201534444,10000,0905123456,'B@gmail.com','Hà Tĩnh'),
+('Truong van Beo',5,3,4,'1987-12-12',201534449,10000,0905123956,'C@gmail.com','Quảng Bình');
 
 create table LoaiKhach(
 idLoaiKhach int auto_increment primary key,
@@ -93,7 +93,7 @@ foreign key (idLoaiKhach) references LoaiKhach(idLoaiKhach)
 insert into KhachHang(idLoaiKhach,hoTen,ngaySinh,soCmnd,email,diaChi)
 values
 (1,'Nguyễn Văn Tèo','1993-1-1',2015282890,'teo@gmail.com','Sài Gòn '),
-
+(1,'Nguyễn Văn Tèo','1993-1-1',2015282890,'teo@gmail.com','Đà Nẵng'),
 (2,'Nguyễn VĂn Tí','1987-2-2',201922222,'ti@gmail.com','Huế')
 ;
 
@@ -183,13 +183,15 @@ values
 
 ('xe',100,'USD','Đang khả dụng');
 
-create table HopDongChiTiet(
-idHopDongChiTiet int auto_increment primary key,
-idHopDong int,
-idDichVuDiKem int,
-soLuong int,
-foreign key (idHopDong)references HopDong (idHopDong),
-foreign key (idDichVuDiKem)references DichVuDiKem (idDichVuDiKem)
+CREATE TABLE HopDongChiTiet (
+    idHopDongChiTiet INT AUTO_INCREMENT PRIMARY KEY,
+    idHopDong INT,
+    idDichVuDiKem INT,
+    soLuong INT,
+    FOREIGN KEY (idHopDong)
+        REFERENCES HopDong (idHopDong),
+    FOREIGN KEY (idDichVuDiKem)
+        REFERENCES DichVuDiKem (idDichVuDiKem)
 );
 
 insert into HopDongChiTiet(idHopDong,idDichVuDiKem,soLuong)
@@ -197,3 +199,32 @@ values
 (1,2,2),
 (1,1,1)
 ;
+/*2.	Hiển thị thông tin của tất cả nhân viên có
+ trong hệ thống có tên bắt đầu là một trong các ký tự 
+“H”, “T” hoặc “K” và có tối đa 15 ký tự.*/
+
+select *
+from NhanVien
+where hoTen like'%K%';
+
+SELECT 
+    *
+FROM
+    NhanVien
+WHERE
+    hoTen LIKE '%K%' OR hoTen LIKE '%K%'
+        OR hoTen LIKE '%K%'
+        AND CHAR_LENGTH(hoTen) < 15
+;
+/*task 3.Hiển thị thông tin của tất cả khách hàng có 
+độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.*/
+
+select * 
+from KhachHang
+where (ngaySinh between 18 and 50) and diaChi in ('Huế','Đà Nẵng')
+;
+
+
+
+
+
