@@ -52,17 +52,18 @@ idBoPhan  int,
 ngaySinh date,
 soCmnd int,
 luong double,
-sdt int,
+sdtNhanVien int,
 email varchar(45),
 diaChi varchar(45),
-foreign key(idViTri)references ViTri(idViTri),
-foreign key(idTrinhDo)references TrinhDo(idTrinhDo),
-foreign key(idBoPhan)references BoPhan(idBoPhan)
+foreign key(idViTri)references ViTri(idViTri) on update cascade on delete cascade,
+foreign key(idTrinhDo)references TrinhDo(idTrinhDo) on update cascade on delete cascade,
+foreign key(idBoPhan)references BoPhan(idBoPhan)on update cascade on delete cascade
 );
 
-insert into NhanVien(hoTen,idViTri,idTrinhDo,idBoPhan,ngaySinh,soCmnd,luong,sdt,email,diaChi)
+insert into NhanVien(hoTen,idViTri,idTrinhDo,idBoPhan,ngaySinh,soCmnd,luong,sdtNhanVien,email,diaChi)
 value
 ('Nguyen van Teo',1,1,3,'1990-12-12',201535456,300,0905222321,'A@gmail.com','Đà Nẵng'),
+('Nguyen van Bao',1,1,3,'1990-12-12',201535456,300,0905222321,'A@gmail.com','Sài Gòn'),
 ('Trong Khiem',5,3,4,'1987-12-12',201534444,10000,0905123456,'B@gmail.com','Hà Tĩnh'),
 ('Truong van Beo',5,3,4,'1987-12-12',201534449,10000,0905123956,'C@gmail.com','Quảng Bình');
 
@@ -85,16 +86,20 @@ idLoaiKhach int,
 hoTen varchar(45),
 ngaySinh date,
 soCmnd int,
+sdtKhachHang int,
 email varchar(45),
 diaChi varchar(45),
-foreign key (idLoaiKhach) references LoaiKhach(idLoaiKhach)
+foreign key (idLoaiKhach) references LoaiKhach(idLoaiKhach)on update cascade on delete cascade
 );
 
-insert into KhachHang(idLoaiKhach,hoTen,ngaySinh,soCmnd,email,diaChi)
+insert into KhachHang(idLoaiKhach,hoTen,ngaySinh,soCmnd,sdtKhachHang,email,diaChi)
 values
-(1,'Nguyễn Văn Tèo','1993-1-1',2015282890,'teo@gmail.com','Sài Gòn '),
-(1,'Nguyễn Văn Tèo','1993-1-1',2015282890,'teo@gmail.com','Đà Nẵng'),
-(2,'Nguyễn VĂn Tí','1987-2-2',201922222,'ti@gmail.com','Huế')
+(1,'Nguyễn Văn Tèo','1993-1-1',2015282890,0905123456,'teo@gmail.com','Sài Gòn '),
+(1,'Trương Vô Kị','1993-1-1',2015282890,0905654321,'teo@gmail.com','Đà Nẵng'),
+(1,'Nguyễn Văn A','1993-1-1',2015282890,0905222222,'teo@gmail.com','Sài Gòn '),
+(3,'Nguyễn Văn Tèo','1993-1-1',2015282890,0905144444,'teo@gmail.com','Sài Gòn '),
+(1,'Thái Văn Tèo','1993-1-1',2015282890,0905777777,'teo@gmail.com','Sài Gòn '),
+(2,'Nguyễn VĂn Tí','1987-2-2',201922222,0905111111,'ti@gmail.com','Huế')
 ;
 
 create table KieuThue(
@@ -131,8 +136,8 @@ chiPhiThue double,
 idKieuThue int,
 idLoaiDichVu int,
 trangThai varchar(45),
-foreign key (idKieuThue) references KieuThue(idKieuThue),
-foreign key (idLoaiDichVu) references LoaiDichVu(idLoaiDichVu)
+foreign key (idKieuThue) references KieuThue(idKieuThue) on update cascade on delete cascade,
+foreign key (idLoaiDichVu) references LoaiDichVu(idLoaiDichVu) on update cascade on delete cascade
 );
 
 insert into DichVu(tenDichVu,dienTich,soTang,soNguoiToiDa,chiPhiThue,idKieuThue,idLoaiDichVu,trangThai)
@@ -151,16 +156,21 @@ ngayLamHopDong date,
 ngayKetThuc date,
 tienDatCoc double,
 tongTien double,
-foreign key (idNhanVien) references NhanVien(idNhanVien),
-foreign key (idKhachHang) references KhachHang(idKhachHang),
-foreign key (idDichVu) references DichVu(idDichVu)
+foreign key (idNhanVien) references NhanVien(idNhanVien)on update cascade on delete cascade,
+foreign key (idKhachHang) references KhachHang(idKhachHang)on update cascade on delete cascade,
+foreign key (idDichVu) references DichVu(idDichVu)on update cascade on delete cascade
 );
 
 insert into HopDong(idNhanVien,idKhachHang,idDichVu,ngayLamHopDong,ngayKetThuc,tienDatCoc,tongTien)
 values
 (1,1,1,'2021-2-2','2021-2-21',200,2000),
-
-(1,1,1,'2021-1-11','2021-1-21',100,1500)
+(1,2,1,'2017-1-11','2021-9-21',100,1500),
+(1,3,1,'2018-1-11','2020-1-21',100,1500),
+(1,3,1,'2019-4-11','2020-1-21',100,1500),
+(2,3,1,'2019-2-11','2020-1-21',100,1500),
+(2,3,1,'2016-2-11','2020-1-21',100,1500),
+(2,3,1,'2014-2-11','2020-1-21',100,1500),
+(3,1,1,'2021-1-11','2021-1-21',100,1500)
 ;
 
 create table DichVuDiKem(
@@ -189,42 +199,15 @@ CREATE TABLE HopDongChiTiet (
     idDichVuDiKem INT,
     soLuong INT,
     FOREIGN KEY (idHopDong)
-        REFERENCES HopDong (idHopDong),
+        REFERENCES HopDong (idHopDong)on update cascade on delete cascade,
     FOREIGN KEY (idDichVuDiKem)
-        REFERENCES DichVuDiKem (idDichVuDiKem)
+        REFERENCES DichVuDiKem (idDichVuDiKem)on update cascade on delete cascade
 );
 
 insert into HopDongChiTiet(idHopDong,idDichVuDiKem,soLuong)
 values
 (1,2,2),
-(1,1,1)
+(2,2,2),
+(2,1,1),
+(2,2,2)
 ;
-/*2.	Hiển thị thông tin của tất cả nhân viên có
- trong hệ thống có tên bắt đầu là một trong các ký tự 
-“H”, “T” hoặc “K” và có tối đa 15 ký tự.*/
-
-select *
-from NhanVien
-where hoTen like'%K%';
-
-SELECT 
-    *
-FROM
-    NhanVien
-WHERE
-    hoTen LIKE '%K%' OR hoTen LIKE '%K%'
-        OR hoTen LIKE '%K%'
-        AND CHAR_LENGTH(hoTen) < 15
-;
-/*task 3.Hiển thị thông tin của tất cả khách hàng có 
-độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.*/
-
-select * 
-from KhachHang
-where (ngaySinh between 18 and 50) and diaChi in ('Huế','Đà Nẵng')
-;
-
-
-
-
-
