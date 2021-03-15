@@ -18,8 +18,8 @@
     </c:if>
 
     <c:if test="${not empty productServiceList}">
-        <form>
-            <input type="hidden" name="actionUser" value="search"/>
+        <form method="post">
+            <input type="hidden" name="action" value="search"/>
             <input type="text" name="name" placeholder="Search"/>
             <input type="submit" value="Search"/>
         </form>

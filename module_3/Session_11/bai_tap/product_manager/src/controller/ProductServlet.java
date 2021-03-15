@@ -32,6 +32,9 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 deleteProduct(request, response);
                 break;
+            case "search":
+                searchProduct(request, response);
+                break;
             default:
                 break;
         }
@@ -115,9 +118,7 @@ public class ProductServlet extends HttpServlet {
             case "view":
                 viewProduct(request, response);
                 break;
-            case "Search":
-                searchProduct(request, response);
-                break;
+
             default:
                 showInformation(request, response);
                 break;
@@ -129,9 +130,9 @@ public class ProductServlet extends HttpServlet {
         List<Product> productList = productService.findByName(name);
         RequestDispatcher dispatcher;
         if (productList == null) {
-            dispatcher = request.getRequestDispatcher("error-404.jsp");
+            dispatcher = request.getRequestDispatcher("/product/error-404.jsp");
         } else {
-            request.setAttribute("productListFromServlet", productList);
+            request.setAttribute("productList", productList);
             dispatcher = request.getRequestDispatcher("/product/search.jsp");
         }
         try {
@@ -180,7 +181,7 @@ public class ProductServlet extends HttpServlet {
         Product product = productService.findById(id);
         RequestDispatcher requestDispatcher;
         if (product == null) {
-            requestDispatcher = request.getRequestDispatcher("error-404.jsp");
+            requestDispatcher = request.getRequestDispatcher("/product/error-404.jsp");
         } else {
             request.setAttribute("product", product);
             requestDispatcher = request.getRequestDispatcher("/product/edit.jsp");

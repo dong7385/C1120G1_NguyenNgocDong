@@ -28,10 +28,11 @@
         <th>Description</th>
 
     </tr>
-    <c:forEach items="${productServiceList}" var="product">
+    <c:forEach items="${productList}" var="product">
         <tr>
-            <td><a href="/product?action=search&name=${product.id}">${product.getName()}</a></td>
-            <td><c:out value="${product.price}"/></td>
+
+            <td>${product.getName()}</td>
+            <td>${product.getPrice()}</td>
             <td>${product.getDescription()}</td>
         </tr>
     </c:forEach>
