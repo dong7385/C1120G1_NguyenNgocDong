@@ -14,9 +14,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/bootstrap.css">
-<head>
+    <head>
 <body>
-<form method="post" action="/user">
+<form method="post" action="../user">
     <div>
         <span>Name:</span>
         <input type="text" name="name" style="display: inline">

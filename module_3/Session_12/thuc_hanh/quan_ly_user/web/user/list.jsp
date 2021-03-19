@@ -13,15 +13,18 @@
 <div class="container">
     <h2>User List</h2>
 
-    <c:if test="${empty userService}">
+    <c:if test="${empty userList}">
         <h3>User List Empty</h3>
     </c:if>
 
-    <c:if test="${not empty userService}">
+    <c:if test="${not empty userList}">
         <form method="post">
             <input type="hidden" name="action" value="search"/>
             <input type="text" name="name" placeholder="Search"/>
-            <input type="submit" value="Search"/>
+            <input type="submit" value="Search"/><br>
+            <h2>
+                <input type="submit"value="Create"><a href="user/?action=create"></a>
+            </h2>
         </form>
         <table class="table table-hover">
             <thead>
@@ -34,7 +37,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${userService}" var="user">
+            <c:forEach items="${userList}" var="user">
                 <tr>
                     <td>${user.getId()}</td>
                     <td><a href="/user?action=view&id=${user.id}">${user.getName()}</a></td>
