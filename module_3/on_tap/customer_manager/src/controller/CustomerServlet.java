@@ -38,7 +38,7 @@ public class CustomerServlet extends HttpServlet {
                 deleteForm(request, response);
                 break;
             case "search":
-
+                searchForm(request, response);
                 break;
             default:
                 break;
@@ -101,7 +101,7 @@ public class CustomerServlet extends HttpServlet {
             case "view":
                 break;
             case "search":
-                searchForm(request,response);
+                searchForm(request, response);
                 break;
             default:
                 listCustomer(request, response);

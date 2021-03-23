@@ -19,15 +19,14 @@
     </c:if>
 
     <c:if test="${not empty customerList}">
-        <form method="post" action="customer">
+        <form method="post" action="/customer">
             <input type="hidden" name="action" value="search"/>
             <input type="text" name="name" placeholder="Search"/>
-            <button type="button"><a href="../customer?action=search&name">Search</a></button>
+            <button type="submit" class="btn btn-success">Search</button>
             <br>
-
         </form>
         <h4>
-            <button type="button"><a href="../customer?action=create">Create</a></button>
+         <a class="btn btn-primary" href="../customer?action=create">Create</a>
         </h4>
         <table id="customer" class="table table-striped">
             <thead>
@@ -59,9 +58,14 @@
         </table>
     </c:if>
 </div>
-<%--<form action="../customer" method="post" id="deleteCustomer">--%>
-<%--    <input type="hidden" name="action" value="delete">--%>
-<%--    <input type="hidden" name="idCustomer" id="idCustomer">--%>
-<%--</form>--%>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 </html>

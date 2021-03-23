@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: No Name VN
-  Date: 3/11/2021
-  Time: 9:48 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -53,8 +47,8 @@
                                     <img src="/img/no_photo.jpg" width="50px" height="50px">
                                 </c:if>
                                 <c:if test="${not empty student.image}">
-                                    <img src="/img/${student.image}" width="50px" height="50px">
-                                </c:if>
+                                <img src="/img/${student.image}" width="50px" height="50px">
+                            </c:if>
                             </td>
                         </tr>
                     </c:forEach>
