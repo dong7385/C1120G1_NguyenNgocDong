@@ -11,12 +11,13 @@ import java.util.Map;
 import java.util.TreeMap;
 
 @Controller
-public class TuDienController {
+public class DictionaryController {
     @GetMapping("/")
-    public String Home() {
+    public String home() {
         return "index";
     }
-@PostMapping("/convert")
+
+    @PostMapping("/convert")
     public String convert(@RequestParam String word, Model model) {
         Map<String, String> map = new TreeMap<>();
         map.put("hello", "Xin chào");
@@ -25,9 +26,8 @@ public class TuDienController {
         map.put("computer", "Máy tính");
         String search = map.get(word);
         if (search == null) {
-           model.addAttribute("search","Word not found");
+            model.addAttribute("search", "Word not found");
         } else {
-
             model.addAttribute("search", search);
         }
         return "result";

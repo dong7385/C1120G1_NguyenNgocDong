@@ -7,13 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-  <form method="post" action="/convert">
+</head>
+<body>
+<form method="post" action="/convert">
     <p>Tiếng Anh:<input type="text" name="word"></p>
     <input type="submit" value="Submit">
-  </form>
-  </body>
+</form>
+</body>
 </html>

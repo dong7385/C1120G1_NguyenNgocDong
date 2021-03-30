@@ -7,14 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>Chuyển Đổi Tiền Tệ</title>
-  </head>
-  <body>
-  <form method="post" action="/convert">
-  <p>USD: <input type="text" name="usd"></p>
-  <p>Rate: <input type="text" name="rate"></p>
-  <input type="submit" value="ConVert">
-  </form>
-  </body>
+</head>
+<body>
+<form method="post" action="/convert">
+    <p>USD: <input type="text" name="usd"></p>
+    <p>Rate: <input type="text" name="rate"></p>
+    <input type="submit" value="ConVert">
+</form>
+</body>
 </html>

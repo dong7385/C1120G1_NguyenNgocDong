@@ -16,9 +16,9 @@ public class ConvertController {
     @PostMapping("/convert")
     public String convert(@RequestParam int usd, @RequestParam int rate, Model model) {
         int vnd = usd * rate;
-model.addAttribute("usd",usd);
-model.addAttribute("rate",rate);
-model.addAttribute("vnd",vnd);
+        model.addAttribute("usd", usd);
+        model.addAttribute("rate", rate);
+        model.addAttribute("vnd", vnd);
         return "result";
     }
 }
