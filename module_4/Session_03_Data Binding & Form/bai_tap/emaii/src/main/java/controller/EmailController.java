@@ -24,7 +24,7 @@ public class EmailController {
     }
 
     @GetMapping("/")
-    public ModelAndView ShowEmailPage(@ModelAttribute Email email) {
+    public ModelAndView showEmailPage(@ModelAttribute Email email) {
         return new ModelAndView("email/list", "email", email);
     }
 }

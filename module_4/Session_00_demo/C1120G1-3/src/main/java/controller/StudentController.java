@@ -21,13 +21,13 @@ public class StudentController {
     StudentService studentService = new StudentServiceImpl();
 
     @GetMapping("/students")
-    public String getStudentPage(Model model){
+    public String getStudentPage(Model model) {
         model.addAttribute("listStudent", studentService.findAll());
         return "student/list";
     }
 
     @GetMapping("/student/create")
-    public ModelAndView createStudentPage(Model model){
+    public ModelAndView createStudentPage(Model model) {
         List<String> subjects = new ArrayList<>();
         subjects.add("Java");
         subjects.add("PHP");
@@ -38,7 +38,7 @@ public class StudentController {
     }
 
     @PostMapping("/student/create")
-    public String saveStudent(@ModelAttribute Student student, RedirectAttributes redirectAttributes){
+    public String saveStudent(@ModelAttribute Student student, RedirectAttributes redirectAttributes) {
         studentService.save(student);
         redirectAttributes.addFlashAttribute("message", "Them moi thanh cong");
         return "redirect:/students";

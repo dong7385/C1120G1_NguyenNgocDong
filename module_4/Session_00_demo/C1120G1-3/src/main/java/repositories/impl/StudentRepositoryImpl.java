@@ -18,6 +18,7 @@ public class StudentRepositoryImpl implements StudentRepository {
         listMap.put(3, new Student(3, "Vy", 24, "C#"));
         listMap.put(4, new Student(4, "Long", 24, "NodeJs"));
     }
+
     @Override
     public List<Student> findAll() {
         return new ArrayList<>(listMap.values());
