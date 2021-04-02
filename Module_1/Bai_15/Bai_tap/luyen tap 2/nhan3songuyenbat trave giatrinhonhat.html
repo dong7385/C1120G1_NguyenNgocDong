@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    let a = [];
+    for (let i = 0; i < 3; i++) {
+        a[i] = parseInt(prompt("Enter a number"));
+    }
+    function isCheckArr(a) {
+        let min = a[0];
+        for (let i = 1; i < a.length;i++) {
+            if (a[i] < min) {
+                min = a[i];
+            }
+        }
+        return min;
+    }
+    let min = isCheckArr(a);
+    alert("min=" + min);
+</script>
+
+</body>
+</html>

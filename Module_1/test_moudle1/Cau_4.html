@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let maSanPham;
+    let tenSanPham;
+    let hangSanXuat;
+    let gia;
+    let arrAddNameCustomer = [];
+    let arrListCustomer = [];
+
+    class Customer {
+        constructor(maSanPham, tenSanPham, hangSanXuat, gia) {
+            this.maSanPham = maSanPham;
+            this.tenSanPham = tenSanPham;
+            this.hangSanXuat = hangSanXuat;
+            this.gia = gia;
+
+        }
+
+        getMaSanPham() {
+            return this.maSanPham;
+        }
+
+        setMaSanPham(maSanPham) {
+            this.maSanPham = maSanPham;
+        }
+
+        getTenSanPham() {
+            return "this.tenSanPham"
+        }
+
+        setTenSanPham(tenSanPham) {
+            this.tenSanPham = tenSanPham;
+        }
+
+        getHangSanXuat() {
+            return this.hangSanXuat;
+        }
+
+        setHangSanXuat(hangSanXuat) {
+            this.hangSanXuat = hangSanXuat;
+        }
+
+        getGia() {
+            return this.gia;
+        }
+
+        setGia(gia) {
+            this.gia = gia;
+        }
+
+        toString() {
+            return this.maSanPham + this.tenSanPham + this.hangSanXuat + this.gia;
+        }
+    }
+
+
+    function addNameCustomer() {
+        maSanPham = prompt("Enter maSanPham ");
+        tenSanPham = prompt("Enter tenSanPham");
+        hangSanXuat = prompt("Enter hangSanXuat");
+        gia = prompt("Enter gia");
+
+        arrAddNameCustomer = [maSanPham, tenSanPham, hangSanXuat, gia];
+
+        arrListCustomer.push(arrAddNameCustomer);
+        alert("Ban da them thanh cong");
+    }
+
+    displayMainMenu();
+    addNameCustomer();
+    check = false;
+
+    function displayMainMenu() {
+        let flag = true;
+        let choose;
+        do {
+            choose = parseInt(prompt("1.addNameCustomer" + "\n" +
+                "2.displayCustomers" + "\n" +
+                "\n"));
+            switch (choose) {
+                case 1:
+                    addNameCustomer();
+                    break;
+                case 2:
+                    displayCustomers();
+                    break;
+
+                default:
+                    alert("Failed");
+                    break;
+                    flag = false;
+            }
+        } while (flag === true);
+    }
+
+
+    function displayCustomers() {
+        let list = "";
+        let index;
+        for (let i = 0; i < arrListCustomer.length; i++) {
+            list += (i + 1) + " : " + arrListCustomer[i].getMaSanPham() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(list));
+        index = chooseDisplay - 1;
+        alert("1.maSanPham:  " + arrListCustomer[index].getMaSanPham() + "\n" +
+            "2.tenSanPham:  " + arrListCustomer[index].getTenSanPham() + "\n" +
+            "3.hangSanXuat:  " + arrListCustomer[index].getHangSanXuat() + "\n" +
+            "4.gia:  " + arrListCustomer[index].getGia() + "\n"
+        );
+        displayMainMenu();
+    }
+
+    displayCustomers();
+
+
+</script>
+
+</body>
+</html>

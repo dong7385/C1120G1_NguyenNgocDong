@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // camelCase: ten bien, ten ham
+        // PascalCase: ten class
+
+        function print20Fibo() {
+            let f1 = 0;
+            let f2 = 1;
+
+            console.log(f1);
+            console.log(f2);
+
+            for (let i = 1; i <= 18; i++) {
+                let tmp = f2;
+                f2 = f1 + f2;
+                f1 = tmp;
+                console.log(f2);
+            }
+        }
+
+        print20Fibo();
+    </script>
+</body>
+</html>

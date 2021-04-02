@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--Tìm giá trị trong mảng-->
+<!--array = [-3, 5, 1, 3, 2, 10];-->
+
+<script>
+    let array = [-3, 5, 1, 3, 2, 10];
+    // let check=false;
+    //
+    // n=parseInt(prompt("nhap vao so bat ki"));
+    //
+    // for(let i=0;i<array.length;i++){
+    //     if(n==array[i]){
+    //         check=true;
+    //         break;
+    //     }
+    // }
+    //     if(check==true){
+    //         alert(n+"nam trong mang");
+    //     }
+    //     else
+    //         alert(n+"khong nam trong mang");
+
+
+
+
+   let v=parseInt(prompt("nhap vao so bat ki"));
+    function checkNumber(n) {
+        let check=false;
+        for(let i=0;i<array.length;i++){
+            if(n==array[i]){
+                check=true;
+                break;
+            }
+        }
+        if(check){
+           return true;
+        }
+        else
+          return  false;
+    }
+    let result=checkNumber(v);
+    alert(result)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
