@@ -101,13 +101,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Bạn có thật sự muốn xóa
+                    Do you really want to delete it.
                 </div>
                 <div class="modal-footer">
                     <form th:action="@{/product/delete}" method="post">
                         <input type="hidden" name="id" id="productId">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng </button>
-                        <button type="submit" class="btn btn-primary">Đồng ý </button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel </button>
+                        <button type="submit" class="btn btn-primary">Done </button>
                     </form>
                 </div>
             </div>

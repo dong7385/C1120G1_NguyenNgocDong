@@ -32,7 +32,7 @@ public class ProductController {
 
     @PostMapping("/product/save")
     public String save(Product product) {
-        product.setId((int) (Math.random() * 10000));
+//        product.setId((int) (Math.random() * 10000));
         productService.save(product);
         return "redirect:/";
     }
