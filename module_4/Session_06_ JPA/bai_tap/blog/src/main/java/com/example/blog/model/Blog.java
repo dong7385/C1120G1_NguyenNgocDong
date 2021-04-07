@@ -3,7 +3,6 @@ package com.example.blog.model;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 public class Blog {
@@ -13,7 +12,7 @@ public class Blog {
     private Integer id;
     private String title;
     private String Content;
-    private Date postDay;
+    private String postDay;
 
     public Blog() {
     }
@@ -42,11 +41,11 @@ public class Blog {
         Content = content;
     }
 
-    public Date getPostDay() {
+    public String getPostDay() {
         return postDay;
     }
 
-    public void setPostDay(Date postDay) {
+    public void setPostDay(String postDay) {
         this.postDay = postDay;
     }
 
