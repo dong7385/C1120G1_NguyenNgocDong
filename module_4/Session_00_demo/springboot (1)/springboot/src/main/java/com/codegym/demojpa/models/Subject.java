@@ -1,18 +1,19 @@
-package com.example.blog.model;
+package com.codegym.demojpa.models;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Category {
+public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    @OneToMany(mappedBy = "category")
-    private List<Blog> blog;
 
-    public Category() {
+    private String name;
+
+    public Subject() {
     }
 
     public Integer getId() {
@@ -29,13 +30,5 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Blog> getBlog() {
-        return blog;
-    }
-
-    public void setBlog(List<Blog> blogs) {
-        this.blog = blogs;
     }
 }
