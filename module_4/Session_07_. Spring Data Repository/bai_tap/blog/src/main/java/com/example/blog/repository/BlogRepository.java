@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BlogRepository extends JpaRepository <Blog, Integer>{
-    Page<Blog> findAll(Pageable pageable);
+//    Page<Blog> findAll(Pageable pageable);
     Page<Blog> findByTitle(String title ,Pageable pageable);
+    Page<Blog> findByOrderByTitleAsc(Pageable pageable);
 }

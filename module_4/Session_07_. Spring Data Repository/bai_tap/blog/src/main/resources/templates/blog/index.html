@@ -10,6 +10,12 @@
         <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i></button>
     </a>
 </p>
+<div>
+    <form th:action="@{/search}" class="d-flex" th:width="50px">
+        <input class="form-control me-2" name="name" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</div>
 
 <table class="table table-striped" id="products">
     <thead>
