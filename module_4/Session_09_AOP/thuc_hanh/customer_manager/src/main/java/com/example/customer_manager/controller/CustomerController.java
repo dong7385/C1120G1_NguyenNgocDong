@@ -20,9 +20,10 @@ public class CustomerController {
     CustomerService customerService;
     @Autowired
     ProvinceService provinceService;
-@GetMapping("/search")
-    public String searchByName(@PageableDefault(value = 2)Pageable pageable, @RequestParam String name, Model model){
-        Page<Customer>customerList=customerService.searchByName(name,pageable);
+
+    @GetMapping("/search")
+    public String searchByName(@PageableDefault(value = 2) Pageable pageable, @RequestParam String name, Model model) {
+        Page<Customer> customerList = customerService.searchByName(name, pageable);
         model.addAttribute("customerList", customerList);
         return "index";
     }
@@ -36,7 +37,7 @@ public class CustomerController {
 
     @GetMapping("/create")
     public String create(Model model) {
-        model.addAttribute("provinces",provinceService.findAll());
+        model.addAttribute("provinces", provinceService.findAll());
         model.addAttribute("customer", new Customer());
         return "/create";
     }
@@ -49,7 +50,7 @@ public class CustomerController {
 
     @GetMapping("{id}/edit")
     public String edit(@PathVariable Long id, Model model) {
-        model.addAttribute("provinces",provinceService.findAll());
+        model.addAttribute("provinces", provinceService.findAll());
         model.addAttribute("customer", customerService.findById(id));
         return "edit";
     }
