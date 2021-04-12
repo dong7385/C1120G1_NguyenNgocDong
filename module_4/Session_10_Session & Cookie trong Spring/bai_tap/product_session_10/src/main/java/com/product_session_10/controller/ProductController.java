@@ -16,7 +16,7 @@ import java.util.Map;
 public class ProductController {
 
     @ModelAttribute("cart")
-    public Cart setUpCart(){
+    public Cart setUpCart() {
         return new Cart();
     }
 
@@ -31,26 +31,29 @@ public class ProductController {
     }
 
     @GetMapping("view/{id}")
-    public String view(@PathVariable  Integer id,Model model) {
-        model.addAttribute("product",productService.findById(id));
+    public String view(@PathVariable Integer id, Model model) {
+        model.addAttribute("product", productService.findById(id));
         return "/view";
     }
+
     @PostMapping("/add")
-    public String addToCart(@RequestParam  Integer id, Model model, @ModelAttribute("cart") Cart cart){
+    public String addToCart(@RequestParam Integer id, Model model, @ModelAttribute("cart") Cart cart) {
         Product product = productService.findById(id);
         cart.addToCart(product);
         model.addAttribute("product", product);
         model.addAttribute("message", "Bạn đã add thành công !");
         return "view";
     }
+
     @GetMapping("/cart")
-    public String getCartPage(@ModelAttribute("cart") Cart cart, Model model){
-        Map<Product, Integer>cartProduct = cart.getCart();
+    public String getCartPage(@ModelAttribute("cart") Cart cart, Model model) {
+        Map<Product, Integer> cartProduct = cart.getCart();
         model.addAttribute("cartProduct", cartProduct);
         return "cart";
     }
+
     @GetMapping("/cart/delete/{id}")
-    public String removeItem(@ModelAttribute("cart") Cart cart, @PathVariable("id") Integer id){
+    public String removeItem (@PathVariable("id") Integer id,@ModelAttribute("cart") Cart cart ){
         cart.removeProduct(productService.findById(id));
         return "redirect:/cart";
     }
