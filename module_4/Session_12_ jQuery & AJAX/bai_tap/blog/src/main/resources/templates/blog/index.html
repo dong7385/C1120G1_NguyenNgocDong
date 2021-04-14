@@ -2,17 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head">
 </head>
-<body>
+<body id="body">
 
 <h2 class="text-center" style="color: coral;font-family: 'Berlin Sans FB';">BLOG LIST</h2>
 <button type="button" id="create" class="btn btn-primary"><i class="fas fa-plus"></i></button>
-<div>
-    <form class="d-flex" th:width="50px">
-        <input id="inputSearch" class="form-control me-2" name="name" type="search" placeholder="Search"
-               aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-</div>
+
+
+            <input id="inputSearch" class="form-control me-2" name="name" type="search" placeholder="Search"
+                   aria-label="Search">
+            <button class="btn btn-outline-success" type="button" id="btnSearch">Search</button>
+
+
 
 <table class="table table-striped" id="products">
     <thead>
@@ -139,14 +139,13 @@
             $("#modelIdDelete").modal('show');
         });
 
-        $(".inputSearch").click(function () {
+        $("#btnSearch").click(function () {
             $.ajax({
                 type: "GET",
-                url: "/search/" + $(this).val(),
+                url: "/search?name=" + $("#inputSearch").val(),
                 dataType: "HTML",
                 success: function (data) {
-                    $(".modal-body").html(data);
-                    $("#modelId").modal('show');
+                    $("#body").html(data);
                 }
             });
         });

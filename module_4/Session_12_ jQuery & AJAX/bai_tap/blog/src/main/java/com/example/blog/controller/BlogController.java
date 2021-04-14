@@ -19,7 +19,7 @@ public class BlogController {
     @Autowired
     CategoryService categoryService;
     @GetMapping("/search")
-    public String searchByName(@PageableDefault(value = 2)Pageable pageable, @RequestParam String name, Model model){
+    public String searchByName(@PageableDefault(value = 2)Pageable pageable, @RequestParam("name") String name, Model model){
         Page<Blog>blogList=blogService.searchByName(name,pageable);
         model.addAttribute("blogList", blogList);
         return "blog/index";
