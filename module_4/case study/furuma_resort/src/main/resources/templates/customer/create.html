@@ -2,17 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head"></head>
 <body>
-<h3>Add Customer</h3>
-<p>
-    <a th:href="@{/customer}">
-        Back to Customer list
-    </a>
-</p>
-<div id="form">
+<div id="form" class="container align-items-center">
+    <h3 class="text-center">Add Customer</h3>
+    <p>
+        <a th:href="@{/customer}">
+            Back to Customer list
+        </a>
+    </p>
     <form th:action="@{/customer/save}" th:object="${customer}"
           method="POST" novalidate="novalidate">
-        <input type="hidden" th:field="*{customerId}"/>
 
+        <div>
+            <label>ID</label>
+            <input type="text" th:field="*{customerId}"/>
+        </div>
         <div>
             <label>Customer Type </label>
             <select th:field="*{customerType}">
@@ -21,20 +24,28 @@
         </div>
 
         <div>
-            <label>Customer Code</label>
-            <input type="text" th:field="*{customerCode}"/>
-        </div>
-        <div>
             <label>Customer Name</label>
             <input type="text" th:field="*{customerName}"/>
         </div>
         <div>
             <label>Customer Birthday</label>
-            <input type="date" th:field="*{customerBirthday}"/>
+            <input type="date" class="form-control" th:field="*{customerBirthday}"/>
         </div>
-        <div>
+        <div><br>
             <label>Customer Gender</label>
-            <input type="text" th:field="*{customerGender}"/>
+<!--            <input type="text" th:field="*{customerGender}"/>-->
+            <div class="form-group">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="gender-1" name="gender" class="custom-control-input" value="true"
+                           th:field="*{customerGender}">
+                    <label class="custom-control-label" for="gender-1">Male</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="gender-0" name="gender" class="custom-control-input" value="false"
+                           th:field="*{customerGender}">
+                    <label class="custom-control-label" for="gender-0">Female</label>
+                </div>
+            </div>
         </div>
         <div>
             <label>Customer Id Card</label>
@@ -53,7 +64,7 @@
             <input type="text" th:field="*{customerAddress}"/>
         </div>
 
-        <input type="submit" value="Save"/>
+        <input type="submit" class="text-center" value="Save"/>
     </form>
 </div>
 <footer th:replace="/layout :: footer"></footer>

@@ -1,9 +1,12 @@
 package case_study.furuma.model.customer;
 
+import case_study.furuma.model.contract.Contract;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
@@ -12,27 +15,27 @@ import javax.persistence.*;
 @Setter
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
- @Column(name = "customer_id")
-    private Integer customerId;
+    @Column(name = "customer_id")
+    private String customerId;
     @ManyToOne
- @JoinColumn(name = "customer_type_id", referencedColumnName = "customer_type_id")
+    @JoinColumn(name = "customer_type_id", referencedColumnName = "customer_type_id")
     private CustomerType customerType;
-  @Column(name = "customer_code",length = 45)
-    private String customerCode;
-  @Column(name = "customer_name", length = 45)
+    @Column(name = "customer_name", length = 45)
     private String customerName;
- @Column(name = "customer_birthday", columnDefinition = "date")
+    @Column(name = "customer_birthday", columnDefinition = "date")
     private String customerBirthday;
- @Column(name = "customer_gender")
+    @Column(name = "customer_gender")
     private Boolean customerGender;
-  @Column(name = "customer_id_card", length = 45)
+    @Column(name = "customer_id_card", length = 45)
     private String customerIdCard;
-   @Column(name = "customer_phone", length = 45)
+    @Column(name = "customer_phone", length = 45)
     private String customerPhone;
-  @Column(name = "customer_email", length = 45)
+    @Column(name = "customer_email", length = 45)
     private String customerEmail;
- @Column(name = "customer_address", length = 45)
+    @Column(name = "customer_address", length = 45)
     private String customerAddress;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Contract>contractList;
 
 }

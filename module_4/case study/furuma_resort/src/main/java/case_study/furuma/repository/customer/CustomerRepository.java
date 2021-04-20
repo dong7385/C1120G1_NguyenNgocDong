@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer,Integer> {
+public interface CustomerRepository extends JpaRepository<Customer,String> {
     Page<Customer> findAll(Pageable pageable);
-    Page<Customer> findByCustomerName(String name ,Pageable pageable);
+    Page<Customer> findAllByCustomerNameContaining(String name ,Pageable pageable);
     Page<Customer> findByOrderByCustomerName(Pageable pageable);
 }

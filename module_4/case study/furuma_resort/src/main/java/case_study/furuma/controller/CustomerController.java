@@ -1,8 +1,8 @@
 package case_study.furuma.controller;
 
 import case_study.furuma.model.customer.Customer;
-import case_study.furuma.serrvice.customer.CustomerService;
-import case_study.furuma.serrvice.customer.CustomerTypeService;
+import case_study.furuma.serrvices.customer.CustomerService;
+import case_study.furuma.serrvices.customer.CustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,21 +38,27 @@ public class CustomerController {
         return "redirect:/customer";
     }
     @GetMapping("{id}/edit")
-    public String edit(@PathVariable Integer id, Model model) {
+    public String edit(@PathVariable String id, Model model) {
         model.addAttribute("customerTypes",customerTypeService.findAll());
         model.addAttribute("customer", customerService.findById(id));
         return "customer/edit";
     }
 
     @GetMapping("{id}/view")
-    public String view(@PathVariable Integer id, Model model) {
+    public String view(@PathVariable String id, Model model) {
         model.addAttribute("customer", customerService.findById(id));
         return "customer/view";
     }
 
     @GetMapping("/delete")
-    public String delete(@RequestParam Integer id) {
+    public String delete(@RequestParam String id) {
         customerService.deleteById(id);
         return "redirect:/customer";
+    }
+    @GetMapping("/search")
+    public String searchByName(@PageableDefault(value = 2)Pageable pageable, @RequestParam String name, Model model){
+        Page<Customer>customers=customerService.findAllByCustomerNameContaining(name,pageable);
+        model.addAttribute("customers", customers);
+        return "customer/index";
     }
 }
