@@ -4,6 +4,8 @@ import case_study.furuma.model.contract.Contract;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -47,7 +49,7 @@ public class Employee {
     @Column(name = "username",length = 255)
     private String username;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
     private List<Contract> employeeList;
 
 

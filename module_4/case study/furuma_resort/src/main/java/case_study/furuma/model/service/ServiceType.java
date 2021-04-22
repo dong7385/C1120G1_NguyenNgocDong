@@ -3,7 +3,6 @@ package case_study.furuma.model.service;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,6 +20,6 @@ public class ServiceType {
     @Column(name = "service_type_name",length = 45)
     private String serviceTypeName;
 
-    @OneToMany(mappedBy = "serviceType")
+    @OneToMany(mappedBy = "serviceType",cascade = CascadeType.ALL)
     List<ServiceF> serviceList;
 }

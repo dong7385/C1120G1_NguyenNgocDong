@@ -16,6 +16,9 @@
             <label>ID</label>
             <input type="text" th:field="*{customerId}"/>
         </div>
+        <div th:if="${#fields.hasErrors('customerId')}"
+             th:errors="*{customerId}">Customer id error>
+        </div>
         <div>
             <label>Customer Type </label>
             <select th:field="*{customerType}">
@@ -26,6 +29,7 @@
         <div>
             <label>Customer Name</label>
             <input type="text" th:field="*{customerName}"/>
+
         </div>
         <div>
             <label>Customer Birthday</label>

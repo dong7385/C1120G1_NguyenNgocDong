@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
@@ -16,6 +17,7 @@ import java.util.List;
 public class Customer {
     @Id
     @Column(name = "customer_id")
+    @Pattern(regexp = "^KH-\\d{4}$",message = "Customer Code is form KH-XXXX (X is number from 0-9)")
     private String customerId;
     @ManyToOne
     @JoinColumn(name = "customer_type_id", referencedColumnName = "customer_type_id")
@@ -29,13 +31,14 @@ public class Customer {
     @Column(name = "customer_id_card", length = 45)
     private String customerIdCard;
     @Column(name = "customer_phone", length = 45)
+    @Pattern(regexp = "(^(090|091|\\(84\\)+90|\\(84\\)+91)\\d{7}$)", message = "Phone number is not valid")
     private String customerPhone;
     @Column(name = "customer_email", length = 45)
     private String customerEmail;
     @Column(name = "customer_address", length = 45)
     private String customerAddress;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private List<Contract>contractList;
 
 }

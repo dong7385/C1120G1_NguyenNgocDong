@@ -19,6 +19,6 @@ public class EducationDegree {
     private Integer educationDegreeId;
     @Column(name="education_degree_name",length = 45)
     private String educationDegreeName;
-    @OneToMany(mappedBy = "educationDegree")
+    @OneToMany(mappedBy = "educationDegree",cascade = CascadeType.ALL)
     List<Employee>employeeList;
 }

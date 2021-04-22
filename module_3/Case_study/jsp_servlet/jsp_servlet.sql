@@ -166,12 +166,12 @@ values 	('Trần Quốc Hoàng', 1, 2, 4, 'giamdoc','1995/12/12', '123123123', '
         ('Lệnh Hồ Xung ', 5, 3, 3, 'nhanvien','1996/12/12', '123123127', '600000', '0909123111', 'xungtq@gmail.com', 'Quảng Nam'),
 		('Doãn Chí Bình', 6, 1, 3, 'nguoidung','1992/10/05', '123123446', 100000, '0909123121', 'binh@gmail.com', 'TP HCM');
 insert into customer(customer_id,customer_type_id, customer_name, customer_birthday, customer_gender, customer_id_card, customer_phone,customer_email, customer_address)
-values	('KH-3',3, 'Lý liên Kiệt','1995/04/05', 1, '345345345', 0908111222, 'lylienkiet@gmail.com','Czech'),
-		('KH-33',3, 'Trương Tam Phong', '2000/03/05', 1, '111222333', 0908111333, 'trungtamphong@gmail.com', 'Spain'),
-		('KH-32',2, 'Trương Vô Kị', '2001/11/11', 1, '343444555', 0908111444, 'truongvoki@gmail.com', 'France'),
-		('KH-31',1, 'Hồng Liên Quang', '2001/04/05', 0, '111111111', 0908111545, 'honglienquang@gmail.com', 'England'),
-		('KH-34',2,'Phương Thế Ngọc', '1994/12/12', 0, '020202021', 0908111666,'phuongthengoc@gmail.com','USA'),
-        ('KH-35', 4,'Lý Mạc Sầu', '1986/12/12', 1, '027699843', 0976798223,'lymacsau@gmail.com','Germany');
+values	('KH-1',3, 'Lý liên Kiệt','1995/04/05', 1, '345345345', 0908111222, 'lylienkiet@gmail.com','Czech'),
+		('KH-2',3, 'Trương Tam Phong', '2000/03/05', 1, '111222333', 0908111333, 'trungtamphong@gmail.com', 'Spain'),
+		('KH-3',2, 'Trương Vô Kị', '2001/11/11', 1, '343444555', 0908111444, 'truongvoki@gmail.com', 'France'),
+		('KH-4',1, 'Hồng Liên Quang', '2001/04/05', 0, '111111111', 0908111545, 'honglienquang@gmail.com', 'England'),
+		('KH-5',2,'Phương Thế Ngọc', '1994/12/12', 0, '020202021', 0908111666,'phuongthengoc@gmail.com','USA'),
+        ('KH-6', 4,'Lý Mạc Sầu', '1986/12/12', 1, '027699843', 0976798223,'lymacsau@gmail.com','Germany');
 insert into service(service_id,service_name, service_area, service_max_people, service_cost, rent_type_id, service_type_id,
 standard_room, description_other_convenience, pool_area, number_of_floors)
 values  ('DV-1',"Villa 1",100,5,1000,1,1,'Luxury','Balcony', 40, 3),
@@ -182,12 +182,12 @@ values  ('DV-1',"Villa 1",100,5,1000,1,1,'Luxury','Balcony', 40, 3),
         ('DV-6',"House 2",50,4,600,2,2,'Suite','Bathtub', null, 2);
   
 insert into contract(employee_id, customer_id, service_id, contract_start_day, contract_end_day, contract_deposit, contract_total_money)
-values 	(3,'KH-3','DV-1',"2018-12-12","2019-03-12",100,0),
-		(1,'KH-33','DV-5',"2019-01-12","2019-08-12",100,0),
-		(2,'KH-32','DV-4',"2020-01-12","2020-10-12",100,0),
-		(5,'KH-31','DV-6',"2021-01-12","2020-10-12",100,0),
-		(4,'KH-34','DV-3',"2019-05-01","2021-05-01",100,0),
-        (6,'KH-35','DV-2',"2016-12-12","2019-03-12",100,0);
+values 	(3,'KH-1','DV-1',"2018-12-12","2019-03-12",100,0),
+		(1,'KH-2','DV-5',"2019-01-12","2019-08-12",100,0),
+		(2,'KH-3','DV-4',"2020-01-12","2020-10-12",100,0),
+		(5,'KH-4','DV-6',"2021-01-12","2020-10-12",100,0),
+		(4,'KH-5','DV-3',"2019-05-01","2021-05-01",100,0),
+        (6,'KH-6','DV-2',"2016-12-12","2019-03-12",100,0);
        
         
 insert into contract_detail(quantity)
@@ -196,7 +196,7 @@ values 	(4),
 		(3),
 		(4),
 		(5),
-		(6)
+		(6);
 
 
 

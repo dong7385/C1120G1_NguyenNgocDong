@@ -18,6 +18,6 @@ public class Division {
     private Integer divisionId;
     @Column(name = "division_name", nullable = false)
     private String divisionName;
-    @OneToMany(mappedBy = "division")
+    @OneToMany(mappedBy = "division",cascade = CascadeType.ALL)
     List<Employee> employeeList;
 }

@@ -19,6 +19,6 @@ public class CustomerType {
     private Integer customerTypeId;
     @Column(name = "customer_type_name", length = 45)
     private String customerTypeName;
-    @OneToMany(mappedBy = "customerType")
+    @OneToMany(mappedBy = "customerType",cascade = CascadeType.ALL)
     private List<Customer> customerList;
 }

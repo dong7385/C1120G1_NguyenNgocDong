@@ -20,6 +20,6 @@ public class Position {
     private Integer positionId;
     @Column(name = "position_name",length = 45)
     private String positionName;
-    @OneToMany(mappedBy = "position")
+    @OneToMany(mappedBy = "position",cascade = CascadeType.ALL)
     List<Employee>employeeList;
 }

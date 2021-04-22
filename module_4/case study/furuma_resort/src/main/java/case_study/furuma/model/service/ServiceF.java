@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
@@ -15,7 +16,8 @@ import java.util.List;
 @Table(name = "service")
 public class ServiceF {
     @Id
-    @Column(name = "service_id", length = 45,nullable = false)
+    @Column(name = "service_id", length = 45)
+   @Pattern(regexp = "^DV-\\d{4}$",message = "Service Code format is DV-XXXX (X is number 0-9)")
     private String serviceId;
     @Column(name = "service_name", length = 45)
     private String serviceName;
@@ -40,6 +42,6 @@ public class ServiceF {
     @Column(name = "number_of_floors")
     private Integer numberOfFloors;
 
-    @OneToMany(mappedBy = "serviceF")
+    @OneToMany(mappedBy = "serviceF",cascade = CascadeType.ALL)
     private List<Contract> contractList;
 }

@@ -16,6 +16,11 @@
             <label>ID</label>
             <input type="text" th:field="*{serviceId}"/>
         </div>
+
+        <div th:if="${#fields.hasErrors('serviceId')}"
+             th:errors="*{serviceId}">Service error>
+        </div>
+
         <div>
             <label>serviceName</label>
             <input type="text" th:field="*{serviceName}"/>
