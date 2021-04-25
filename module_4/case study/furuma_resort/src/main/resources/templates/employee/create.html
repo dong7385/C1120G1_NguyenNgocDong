@@ -34,6 +34,9 @@
                 <label>Employee Phone</label>
                 <input type="text" th:field="*{employeeSalary}"/>
             </div>
+            <div th:if="${#fields.hasErrors('employeeSalary')}"
+                 th:errors="*{employeeSalary}">
+            </div>
             <div>
                 <label>Employee Phone</label>
                 <input type="text" th:field="*{employeePhone}"/>

@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
@@ -27,6 +28,7 @@ public class Employee {
     private String employeeIdCard;
     @Column(name="employee_salary")
     private double employeeSalary;
+    @Pattern(regexp = "^[\\d]$",message = "The number of floors must be a positive integer")
     @Column(name="employee_phone",length = 45)
     private String employeePhone;
     @Column(name = "employee_email",length = 45)

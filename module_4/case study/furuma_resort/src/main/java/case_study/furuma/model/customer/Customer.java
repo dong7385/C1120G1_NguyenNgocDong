@@ -4,6 +4,7 @@ import case_study.furuma.model.contract.Contract;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.context.annotation.EnableMBeanExport;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -29,9 +30,10 @@ public class Customer {
     @Column(name = "customer_gender")
     private Boolean customerGender;
     @Column(name = "customer_id_card", length = 45)
+    @Pattern(regexp = "^//d{9}|//d{12}",message = "ID number must be in the format XXXXXXXXX or XXXXXXXXXXXX")
     private String customerIdCard;
     @Column(name = "customer_phone", length = 45)
-    @Pattern(regexp = "(^(090|091|\\(84\\)+90|\\(84\\)+91)\\d{7}$)", message = "Phone number is not valid")
+    @Pattern(regexp = "^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[\\d{7}]$", message = "Phone number is not valid")
     private String customerPhone;
     @Column(name = "customer_email", length = 45)
     private String customerEmail;

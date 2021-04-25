@@ -17,7 +17,7 @@
             <input type="text" th:field="*{customerId}"/>
         </div>
         <div th:if="${#fields.hasErrors('customerId')}"
-             th:errors="*{customerId}">Customer id error>
+             th:errors="*{customerId}">
         </div>
         <div>
             <label>Customer Type </label>
@@ -55,9 +55,19 @@
             <label>Customer Id Card</label>
             <input type="text" th:field="*{customerIdCard}"/>
         </div>
+       <div>
+           <p th:if="${#fields.hasErrors('customerIdCard')}"
+              th:errors="*{customerIdCard}">
+           </p>
+       </div>
         <div>
             <label>Customer Phone</label>
             <input type="text" th:field="*{customerPhone}"/>
+        </div>
+        <div>
+            <p th:if="${#fields.hasErrors('customerPhone')}"
+               th:errors="*{customerPhone}">
+            </p>
         </div>
         <div>
             <label>Customer Email</label>

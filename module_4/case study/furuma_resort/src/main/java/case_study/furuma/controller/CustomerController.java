@@ -45,7 +45,7 @@ public class CustomerController {
             return "customer/create";
         }
         customerService.save(customer);
-        return "redirect:/customer";
+        return "redirect:/customer/";
     }
 
     @GetMapping("{id}/edit")
@@ -64,7 +64,7 @@ public class CustomerController {
     @GetMapping("/delete")
     public String delete(@RequestParam String id) {
         customerService.deleteById(id);
-        return "redirect:/customer";
+        return "redirect:/customer/";
     }
 
     @GetMapping("/search")

@@ -40,6 +40,7 @@ public class ServiceF {
     @Column(name = "pool_area")
     private double poolArea;
     @Column(name = "number_of_floors")
+    @Pattern(regexp = "^[\\d]$",message = "The number of floors must be a positive integer")
     private Integer numberOfFloors;
 
     @OneToMany(mappedBy = "serviceF",cascade = CascadeType.ALL)

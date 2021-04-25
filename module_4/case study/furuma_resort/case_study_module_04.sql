@@ -9,3 +9,15 @@ values	('KH-1',3, 'Lý liên Kiệt','1995/04/05', 1, '345345345', 0908111222, '
 		('KH-4',1, 'Hồng Liên Quang', '2001/04/05', 0, '111111111', 0908111545, 'honglienquang@gmail.com', 'Phap'),
 		('KH-5',2,'Phương Thế Ngọc', '1994/12/12', 0, '020202021', 0908111666,'phuongthengoc@gmail.com','Viet Nam'),
         ('KH-6', 4,'Lý Mạc Sầu', '1986/12/12', 1, '027699843', 0976798223,'lymacsau@gmail.com','Thai Lan');
+        
+insert into attach_service(attach_service_name, attach_service_cost, attach_service_unit, attach_service_status)
+values 	('Massage', 35, 1, 'Available'),
+		('Karaoke', 10, 1, 'Available'),
+        ('Food', 25, 1, 'Available'),
+        ('Drink', 10, 1, 'Available'),
+        ('RentalCar', 40, 1, 'Available');
+        
+select *
+from contract
+where contract_end_day >= '2021/04/22 ';
+        

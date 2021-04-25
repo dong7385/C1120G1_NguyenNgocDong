@@ -40,7 +40,9 @@
             <label>Quantity </label>
             <input type="text" th:field="*{quantity}"/>
         </div>
-
+        <div th:if="${#fields.hasErrors('quantity')}"
+             th:errors="*{quantity}">
+        </div>
 
         <input type="submit" class="text-center" value="Save"/>
     </form>

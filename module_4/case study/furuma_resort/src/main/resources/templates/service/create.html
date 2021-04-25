@@ -66,6 +66,9 @@
             <label>numberOfFloors</label>
             <input type="text" th:field="*{numberOfFloors}"/>
         </div>
+        <div th:if="${#fields.hasErrors('numberOfFloors')}"
+             th:errors="*{numberOfFloors}">
+        </div>
 
         <input type="submit" class="text-center" value="Save"/>
     </form>
