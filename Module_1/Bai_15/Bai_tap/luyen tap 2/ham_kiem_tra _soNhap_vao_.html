@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết hàm nhận vào một so, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+    // Nếu là nguyên dương trả về true, ngược lại trả về false
+
+    let n = prompt("Enter a numbers");
+    let a
+
+    function isCheckNumber(abc) {
+        let check = false;
+        if (!isNaN(abc) && abc > 0) {
+            check = true;
+        }
+        return check
+    }
+
+
+
+    let result=isCheckNumber(n);
+        if(result===true) {
+            alert(n+"  la so nguyen duong");
+        }else
+            alert(n+"  khong phai so nguyen duong");
+
+
+</script>
+
+</body>
+</html>

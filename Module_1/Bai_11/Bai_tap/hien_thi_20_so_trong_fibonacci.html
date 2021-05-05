@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // let n0=0;
+    // let n1=1;
+    // let n2=n0+n1;
+    // document.write(n0+"<br>");
+    // document.write(n1+"<br>");
+    //
+    // for (i=0;i<20;i++) {
+    //
+    //     n2 = n0 + n1;
+    //     document.write(n2 + "<br>");
+    //     n0 = n1;
+    //     n1 = n2;
+    // }
+
+
+
+    let n0=0;
+    let n1=1;
+    let n2;
+    document.write(n0+"<br>");
+    document.write(n1+"<br>");
+
+
+    for (i=0;i<20;i++) {
+        n2 = n0 + n1;
+        document.write(n2 + "<br>");
+
+        n0 = n1;
+        n1 = n2;
+
+        if(n2%5==0){
+            document.write(n2);
+            break;
+        }
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

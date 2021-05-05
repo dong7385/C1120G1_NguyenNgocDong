@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<div id="form" class="container align-items-center">
+    <h3 class="text-center">Add Request</h3>
+    <p>
+        <a th:href="@{/request}">
+            Back to Request list
+        </a>
+    </p>
+    <form th:action="@{/request/save}" th:object="${request}"
+          method="POST" novalidate="novalidate">
+
+        <div>
+            <!--            <label>ID</label>-->
+            <input type="hidden" th:field="*{requestId}"/>
+        </div>
+
+        <div>
+            <label>Product Name </label>
+            <select th:field="*{product}">
+                <option th:each="product : ${products}" th:value="${product.productId}"
+                        th:text="${product.productName}"></option>
+            </select>
+        </div>
+        <div>
+            <label>Product Type Name </label>
+            <select th:field="*{product}">
+                <option th:each="product : ${products}" th:value="${product.productId}"
+                        th:text="${product.productType.productTypeName}"></option>
+            </select>
+        </div>
+
+        <div>
+            <label>Date Request</label>
+            <input type="date" th:field="*{dateRequest}"/>
+        </div>
+        <div>
+            <label>Quantity</label>
+            <input type="text" th:field="*{quantity}"/>
+        </div>
+
+        <input type="submit" class="text-center" value="Save"/>
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

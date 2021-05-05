@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+    let a =prompt("hay nhap chuoi a ");
+    let b =prompt("hay nhap chuoi b ");
+    let check=true;
+
+    if(a.length!=b.length){
+        check=false;
+    }else{
+        for(let i=0;i<a.length;i++){
+          if(a[i]!=b[i]) {
+              check=false;
+              break;
+          }
+        }
+    }
+    if(check===true){
+        alert("2 chuoi giong nhau");
+    }else
+        alert("2 chuoi khong giong nhau");
+
+</script>
+
+
+</body>
+</html>
