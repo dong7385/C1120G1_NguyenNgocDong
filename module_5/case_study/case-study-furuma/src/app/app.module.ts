@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
-import { AComponent } from './a/a.component';
+import { CreateCustomerComponent } from './create-customer/create-customer.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FontSizeEditorComponent,
-    AComponent
+    CreateCustomerComponent,
+    CreateEmployeeComponent
   ],
   imports: [
     BrowserModule,
