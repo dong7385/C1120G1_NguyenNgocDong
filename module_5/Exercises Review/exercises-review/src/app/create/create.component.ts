@@ -1,5 +1,5 @@
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Product} from '../model/Product';
 
 @Component({
   selector: 'app-create',
@@ -7,18 +7,24 @@ import {Product} from '../model/Product';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-  @Output('productCreate') onCreate = new EventEmitter <Product>();
+  rfProduct: FormGroup;
+  @Output('productCreate') onCreate = new EventEmitter<Product>();
 
-  constructor() {
+  constructor(private _formBuilder: FormBuilder) {
   }
-
-  public product: Product | undefined;
 
   ngOnInit(): void {
+    this.rfProduct = this._formBuilder.group({
+      name: ['Laptop'],
+      price: ['200'],
+      productDate: ['Laptop'],
+      quantity: ['3'],
+      description: ['Japan'],
+    });
   }
 
-  create(name: string, price: string, productDate: string, quantity: string, description: string) {
-    this.product = new Product(name,parseInt(price),productDate,parseInt(quantity),description)
-    this.onCreate.emit(this.product);
+  onSubmit() {
+    console.log(this.rfProduct.value);
+    this.onCreate.emit(this.rfProduct.value);
   }
 }

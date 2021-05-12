@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {Product} from './model/Product';
+// @ts-ignore
+import {Product} from "./model/Product";
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,13 @@ import {Product} from './model/Product';
 export class AppComponent {
   title = 'exercises-review';
   // @ts-ignore
+  public product: Product | undefined;
   public products: Product [] = [
-    new Product('iphone 12',1200,'2021-4-12',2,'American'),
-    new Product('iphone 11',1000,'2021-1-1',9,'England'),
-    new Product('iphone 10',800,'2020-1-12',20,'China'),
-    new Product('iphone 8',500,'2019-1-12',0,'VietNam'),
+    {name: 'iphone 12',price: 1200,productDate:'2021-4-12',quantity: 2,description:'American'},
+    {name: 'iphone 10',price: 1000,productDate:'2021-1-12',quantity: 0,description:'Viet Nam'},
+    {name: 'iphone 9',price: 800,productDate:'2020-2-12',quantity: 9,description:'Japan'},
+    {name: 'iphone 8',price: 600,productDate:'2019-4-12',quantity: 15,description:'American'},
   ]
-  product: Product | undefined;
 
   showDetail(product: Product) {
     this.product=product;

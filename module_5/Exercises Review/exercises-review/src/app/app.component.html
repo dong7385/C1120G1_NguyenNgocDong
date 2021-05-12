@@ -20,17 +20,15 @@
             <tr *ngFor="let product of products; let i = index" (click)="showDetail(product)">
               <td>{{i+1}}</td>
               <td>{{product.name}}</td>
-              <td>{{product.price}}</td>
-              <td>{{product.productDate}}</td>
-              <td>{{product.quantity}}</td>
+              <td>{{product['price']}}</td>
+              <td>{{product['productDate']}}</td>
+              <td>{{product['quantity']}}</td>
               <td>
-                <span *ngIf="product.quantity == 0">Out of Stock</span>
-                <span *ngIf="product.quantity >0 && product.quantity < 10">little inventory</span>
-                <span *ngIf="product.quantity >=10">inventory much</span>
-
+                <span *ngIf="product['quantity'] == 0">Out of Stock</span>
+                <span *ngIf="product['quantity']>0 && product['quantity'] < 10">little inventory</span>
+                <span *ngIf="product['quantity']>=10">inventory much</span>
               </td>
-
-              <td>{{product.description}}</td>
+              <td>{{product['description']}}</td>
             </tr>
             </tbody>
           </table>

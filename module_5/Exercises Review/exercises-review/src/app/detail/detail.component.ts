@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+// @ts-ignore
 import {Product} from '../model/Product';
 
 @Component({
@@ -8,7 +9,7 @@ import {Product} from '../model/Product';
 })
 export class DetailComponent implements OnInit {
 
-  @Input("productDetail") productDetail: Product | undefined
+  @Input("productDetail") productDetail: Product
 
   constructor() { }
 
