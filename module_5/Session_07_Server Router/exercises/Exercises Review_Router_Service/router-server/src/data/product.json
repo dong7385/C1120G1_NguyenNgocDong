@@ -1,0 +1,84 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "Iphone12",
+      "price": 1000,
+      "productDate": "2021-12-1",
+      "quantity": 10,
+      "description": "American"
+    },
+    {
+      "id": 2,
+      "name": "Iphone11",
+      "price": 1000,
+      "productDate": "2021-11-1",
+      "quantity": 1,
+      "description": "Japan"
+    },
+    {
+      "id": 3,
+      "name": "Iphone10",
+      "price": 900,
+      "productDate": "2021-9-1",
+      "quantity": 12,
+      "description": "lao"
+    },
+    {
+      "id": 4,
+      "name": "Iphone8",
+      "price": 300,
+      "productDate": "2021-14-1",
+      "quantity": 1,
+      "description": "Indonesia"
+    },
+    {
+      "id": 5,
+      "name": "Iphone4",
+      "price": 100,
+      "productDate": "2021-1-1",
+      "quantity": 9,
+      "description": "China"
+    },
+    {
+      "name": "Laptop",
+      "price": "200",
+      "productDate": "Laptop",
+      "quantity": "3",
+      "description": "Japan",
+      "id": 6
+    },
+    {
+      "name": "Laptop11111111111",
+      "price": "200",
+      "productDate": "Laptop",
+      "quantity": "3",
+      "description": "Japan",
+      "id": 7
+    },
+    {
+      "name": "Laptop",
+      "price": "200",
+      "productDate": "Laptop",
+      "quantity": "3",
+      "description": "Japan",
+      "id": 8
+    },
+    {
+      "name": "Laptop",
+      "price": "200",
+      "productDate": "Laptop",
+      "quantity": "3",
+      "description": "Japan",
+      "id": 9
+    },
+    {
+      "name": "Laptop",
+      "price": "200",
+      "productDate": "Laptop",
+      "quantity": "3",
+      "description": "Japan",
+      "id": 10
+    }
+  ]
+}
