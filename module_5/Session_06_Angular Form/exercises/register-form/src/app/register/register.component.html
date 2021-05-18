@@ -1,0 +1,108 @@
+<div class="container ">
+  <h1>Register Form</h1>
+  <form [formGroup]="rfRegister" (ngSubmit)="submitForm()">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          <label for="name">Name</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" formControlName="name" id="name">
+          <span
+            *ngIf="rfRegister.controls.name.touched && rfRegister.controls.name.errors?.required">Name is required</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Gender</label>
+        </td>
+        <td>
+          <label class="form-check-label">
+            <input type="radio" formControlName="gender"
+                   value="0" class="form-check-input"> Female
+          </label>
+
+          <label class="form-check-label">
+            <input type="radio" formControlName="gender"
+                   value="1" class="form-check-input"> Male
+          </label>
+
+          <label class="form-check-label">
+            <input type="radio" formControlName="gender"
+                   value="2" class="form-check-input"> GTT3
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="age">Age</label>
+        </td>
+        <td>
+          <input type="number" class="form-control" formControlName="age" id="age">
+          <span *ngIf="rfRegister.controls.age.touched"> </span>
+          <span *ngIf="rfRegister.controls.age.errors?.min">bắt buộc và phải lớn hơn 18 tuổi</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="phone">Phone</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" formControlName="phone" id="phone">
+          <span *ngIf="rfRegister.controls.phone.errors?.pattern">bắt buộc và phải có định dạng bao gồm: bắt đầu với +84, và theo sau là 9 đến 10 chữ số. </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="country">Country</label>
+        </td>
+        <td>
+          <select id="country" class="form-select" formControlName="country">
+            <option value="" selected disabled>Select a country</option>
+            <option *ngFor="let country1 of listCountry" value="{{country1}}">{{country1}}</option>
+          </select>
+          <span *ngIf="rfRegister.controls.country.touched && rfRegister.controls.country.errors?.required"
+                class="msgError">bắt buộc, và là một select box để người dùng chọn 1 phần tử trong list.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="email">Email</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" formControlName="email" id="email">
+          <span *ngIf="rfRegister.controls.email.errors?.required">Email errors</span>
+          <span *ngIf="rfRegister.controls.email.errors?.email">Email format : abc@abc.abc</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="password">Password</label>
+        </td>
+        <td>
+          <input type="password" class="form-control"
+                 formControlName="password" id="password">
+          <span *ngIf="rfRegister.controls.password.errors?.required">Password bắt buộc</span>
+          <span *ngIf="rfRegister.controls.password.errors?.minlength">min length là 6.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="confirmPassword">Confirm Password</label>
+        </td>
+        <td>
+          <input type="password" class="form-control" id="confirmPassword" #confirmPassword>
+          <span *ngIf="rfRegister.controls.password.value != confirmPassword.value">Password phải giống nhau.</span>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button type="submit" class="btn btn-success" [disabled]="rfRegister.invalid">Register</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+<body>
+<canvas id="canvasShap"width="800"height="800"style="border:1px solid blue"></canvas>
+<script>
+
+    let convasobj=document.getElementById("canvasShap");
+    let context = convasobj.getContext("2d");
+
+    context.arc(400,400,50,0,2*Math.PI);
+    context.stroke();
+    context.fillStyle="red";
+    context.fill();
+
+
+    context.rect(200,200,200,100);
+    context.stroke();
+    context.fillStyle="blue"
+    context.fill();
+
+    context.fillStyle="red";
+    context.fillRect(150,200,200,300);
+
+    context.font = "italic 58px Cambria";
+    context.fillText("C1120G1", 100, 100);
+
+    context.font="38px cambria";
+    context.fillText("hello",150,150);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="number" id="number">
+<button onclick="tingiaithua()">Tinh N!</button>
+
+<script type="text/javascript">
+
+    function tingiaithua() {
+        let result = 1;
+        let num = document.getElementById("number").value;
+        for (let i=1;i<=num;i++) {
+            result *= i;
+        }
+        alert(result)
+    }
+</script>
+
+</body>
+</html>

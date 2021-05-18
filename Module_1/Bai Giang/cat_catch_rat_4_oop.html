@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Animal {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+
+        // Tinh truu tuong
+        // growl();
+    }
+
+    // Tinh ke thua
+    class Rat extends Animal{
+
+        constructor(name, weight, speed, status) {
+            super(name, weight, speed);
+            this._status = status;
+        }
+
+        // Tinh dong goi
+        getStatus() {
+            return this._status;
+        }
+
+        setStatus(status) {
+            this._status = status;
+        }
+
+        // Tinh da hinh
+        growl() {
+            console.log("Chit, chit...");
+        }
+    }
+
+    class Cat extends Animal {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+        }
+
+        // Tinh da hinh
+        growl() {
+            console.log("Meow, meow...");
+        }
+
+        catch(ratObj) {
+            if (this.speed > ratObj.speed) {
+                console.log("Yeah. Meo da bat duoc chuot, chuot chay cham qua!")
+                this.eat(ratObj);
+            } else {
+                console.log("Ay za, chuot chay nhanh qua!")
+            }
+        }
+
+        eat(ratObj) {
+
+            // Kiem tra chuot co con song hay khong
+            if (ratObj.status === "song") {
+                this.weight += ratObj.weight;
+                console.log("Khoi luong meo hien tai: " + this.weight);
+            } else {
+                console.log("Chuot chet roi, hoi qua!")
+            }
+        }
+    }
+
+    let jerry = new Rat("Jerry", 1, 10, "chet");
+    let tom = new Cat("Tom", 3, 9);
+    tom.growl();
+    jerry.growl();
+    tom.catch(jerry);
+</script>
+</body>
+</html>

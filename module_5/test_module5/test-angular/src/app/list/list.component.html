@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="row float-right">
+    <input type="text" [(ngModel)]="keySearch">
+    <button (click)="searchProduct()" class="form-check-inline bg-success">Search</button>
+  </div>
+  <br/>
+  <select [(ngModel)]="optionSearch">
+    <option value="1">Search Name</option>
+    <option value="2">Search phone</option>
+    <option value="3">Search Topic</option>
+  </select>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <h3 class="card-title text-center">Student List</h3>
+            <table class="table table-hover">
+              <thead class="thead-dark">
+              <tr>
+                <th>No.</th>
+                <th>Code</th>
+                <th>Student Name</th>
+                <th>Ground Name</th>
+                <th>Topic</th>
+                <th>Teacher</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let employee of studentList; let i = index" (click)="showDetail(employee)">
+                <td>{{i + 1}}</td>
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.ground.name}}</td>
+                <td>{{employee.topic}}</td>
+                <td>{{employee.teacher}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
+                <td>
+                  <div class="row option">
+                    <div>
+                      <button class="btn btn-warning" [routerLink]="['/edit/'+employee.id]">Edit</button>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="row option">
+                    <div>
+                      <button class="btn btn-danger" [routerLink]="['/delete/'+employee.id]">Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

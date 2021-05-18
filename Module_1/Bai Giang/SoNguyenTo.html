@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let input = parseInt(prompt("Input number."));
+    let countPrime = 1; //bien dem so nguyen to
+    let number = 2; //so nguyen to dau tien
+    let count = 0; //diem dieu kien: count == 2 la so nguyen to
+
+    while (countPrime <= input){
+        count = 0;
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0){
+                count++;
+            }
+        }
+
+        if(count == 2){
+            document.write(number +" ");
+            countPrime++;
+        }
+        number++;
+    }
+
+
+    // let count = 0;
+    // for (let i = 1; i <= numberPrime; i++) {
+    //     if (numberPrime % i === 0){
+    //         count++;
+    //     }
+    // }
+    //
+    // if(count == 2){
+    //     document.write(numberPrime + " is prime");
+    // }
+</script>
+</body>
+</html>

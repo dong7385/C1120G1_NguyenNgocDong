@@ -1,0 +1,18 @@
+<h1 class="text-center">Login </h1>
+<form [formGroup]="rfLoginForm" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
+  <div class="form-group row">
+    <label class="col">Email:</label>
+    <input type="email" class="form-control" formControlName="email">
+    <span *ngIf="rfLoginForm.controls.email.errors?.required">Email errors</span>
+    <span *ngIf="rfLoginForm.controls.email.errors?.email">Email format : abc@abc.abc</span>
+  </div>
+  <div class="form-group row">
+    <label class="col">Password:</label>
+    <input type="password" class="form-control" formControlName="password">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info" [disabled]="rfLoginForm.invalid" type="submit">Submit</button>
+  </div>
+</form>
+
+

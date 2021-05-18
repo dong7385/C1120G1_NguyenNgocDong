@@ -1,0 +1,26 @@
+<div class="card border-info">
+  <h3 class="card-header bg-info">Product Detail</h3>
+  <div class="card-body">
+    <h4 class="card-title">Product Detail</h4>
+    <div *ngIf="productDetail; else nodata">
+      <div>
+        Name : {{productDetail.name}}
+      </div>
+      <div>
+        Price : {{productDetail.price}}
+      </div>
+      <div>
+        ProductDate : {{productDetail.productDate}}
+      </div>
+      <div>
+        Quantity : {{productDetail.quantity}}
+      </div>
+      <div>
+        Description : {{productDetail.description}}
+      </div>
+    </div>
+    <ng-template #nodata>
+      <p style="color: #ff0000">Enter Product </p>
+    </ng-template>
+  </div>
+</div>

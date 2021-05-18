@@ -1,0 +1,47 @@
+<div class="card border-success mt-4">
+  <h3 class="card-header bg-success">Delete Student </h3>
+  <div class="card-body">
+    <h4 class="card-title"> Please enter your information </h4>
+    <form [formGroup]="rfStudent" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+        <span
+          *ngIf="rfStudent.controls.name.touched && rfStudent.controls.name.errors?.required">Name is required</span>
+      </div>
+      <div class="form-group">
+        <label>Ground Name</label>
+        <!--        <input type="text"  id="employeeType"  class="form-control" formControlName="employeeType" >-->
+        <select class="form-control" formControlName="ground">
+          <option value="">Enter ground type</option>
+          <option *ngFor="let ground of grounds" [value]="ground.id">
+            {{ground.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="gender">topic</label>
+        <input type="text" id="gender" class="form-control" formControlName="topic">
+      </div>
+      <div class="form-group">
+        <label for="idCard">teacher</label>
+        <input type="text" id="idCard" class="form-control" formControlName="teacher">
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input type="text" id="email" class="form-control" formControlName="email">
+        <span *ngIf="rfStudent.controls.email.errors?.required">Email errors</span>
+        <span *ngIf="rfStudent.controls.email.errors?.email">Email format : abc@abc.abc</span>
+      </div>
+      <div class="form-group">
+        <label for="phone">phone</label>
+        <input type="text" id="phone" class="form-control" formControlName="phone">
+        <span *ngIf="rfStudent.controls.phone.errors?.pattern">bắt buộc và phải có định dạng bao gồm: bắt đầu với +84, và theo sau là 10 đến 12 chữ số. </span>
+
+      </div>
+      <!--    <button type="button" class="btn btn-primary" (click)="create(name.value,price.value,productDate.value,quantity.value,description.value)">Create</button>-->
+      <button type="submit" class="btn btn-primary" >Delete</button>
+    </form>
+  </div>
+</div>
+

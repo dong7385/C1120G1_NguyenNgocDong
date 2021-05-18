@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="inputText" />
+    <button onclick="displayValueFormHTML()">Display</button>
+    <input type="text" id="outputText">
+<script>
+    // number = prompt("Xin moi ban nhap vao mot con so: ");
+    // alert(number);
+    // document.write(number);
+    // console.log(number);
+
+    function displayValueFormHTML() {
+        text = document.getElementById("inputText").value;
+        console.log(text);
+        document.getElementById("outputText").value = text;
+    }
+</script>
+</body>
+</html>

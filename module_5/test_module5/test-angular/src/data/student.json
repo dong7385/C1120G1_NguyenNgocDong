@@ -1,0 +1,30 @@
+{
+  "student": [
+    {
+      "name": "Tuan",
+      "groundName": {
+        "id": 1,
+        "name": "Nhóm 1"
+      },
+      "topic": "HTML 5",
+      "teacher": "Trung Dc",
+      "email": "tuan@abc.com",
+      "phone": "+841111111112",
+      "id": 2
+    }
+  ],
+  "ground-name": [
+    {
+      "id": 1,
+      "name": "Nhóm 1"
+    },
+    {
+      "id": 2,
+      "name": "Nhóm 2"
+    },
+    {
+      "id": 3,
+      "name": "Nhóm 3"
+    }
+  ]
+}
