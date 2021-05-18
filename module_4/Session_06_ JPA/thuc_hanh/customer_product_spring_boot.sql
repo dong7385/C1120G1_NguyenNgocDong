@@ -1,3 +1,0 @@
-drop database if exists product_manager_spring_mvc;
-create database product_manager_spring_mvc;
-use product_manager_spring_mvc;
