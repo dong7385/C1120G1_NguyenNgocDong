@@ -1,0 +1,78 @@
+{
+  "student": [
+    {
+      "name": "Tuan",
+      "employeeType": {
+        "id": 1,
+        "name": "Nhóm 1"
+      },
+      "topic": "HTML 5",
+      "teacher": "Trung Dc",
+      "email": "tuan@abc.com",
+      "phone": "+841111111112",
+      "id": 2
+    },
+    {
+      "name": "Thuan",
+      "employeeType": {
+        "id": 1,
+        "name": "Nhóm 1"
+      },
+      "topic": "javascript",
+      "teacher": "Tien",
+      "email": "thuan@aa.com",
+      "phone": "+84111111166655",
+      "id": 3
+    },
+    {
+      "name": "Sang",
+      "employeeType": {
+        "id": 2,
+        "name": "Nhóm 2"
+      },
+      "topic": "javascript",
+      "teacher": "Linh",
+      "email": "sang@abc.com",
+      "phone": "+84111111111222",
+      "id": 4
+    },
+    {
+      "name": "Dong",
+      "employeeType": {
+        "id": 1,
+        "name": "Nhóm 1"
+      },
+      "topic": "javascript",
+      "teacher": "Trung Doan",
+      "email": "dong@abc.com",
+      "phone": "+842765891111",
+      "id": 5
+    },
+    {
+      "name": "Ngoc",
+      "employeeType": {
+        "id": 2,
+        "name": "Nhóm 2"
+      },
+      "topic": "Css",
+      "teacher": "Chanh",
+      "email": "ngoc@abc.com",
+      "phone": "+84123444444444",
+      "id": 6
+    }
+  ],
+  "employee-type": [
+    {
+      "id": 1,
+      "name": "Nhóm 1"
+    },
+    {
+      "id": 2,
+      "name": "Nhóm 2"
+    },
+    {
+      "id": 3,
+      "name": "Nhóm 3"
+    }
+  ]
+}
