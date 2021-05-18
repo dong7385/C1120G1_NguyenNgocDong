@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("ground")
 @CrossOrigin(value = "*",allowedHeaders = "*")
 public class GroundRestController {
     @Autowired
     GroundService groundService;
 
-    @RequestMapping(value = "/ground", method = RequestMethod.GET)
+   @GetMapping("")
     public ResponseEntity<List<Ground>> listAllBlog() {
         List<Ground> groundList = groundService.findAll();
         if (groundList.isEmpty()) {
@@ -24,7 +25,7 @@ public class GroundRestController {
         }
         return new ResponseEntity<List<Ground>>(groundList, HttpStatus.OK);
     }
-    @RequestMapping(value = "/ground/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping("{id}")
     public ResponseEntity<Ground> getBlog(@PathVariable("id") Integer id) {
         System.out.println("Fetching Ground with id " + id);
         Ground ground = groundService.findById(id);

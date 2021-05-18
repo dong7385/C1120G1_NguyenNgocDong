@@ -14,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @RestController
+@RequestMapping("student")
 @CrossOrigin(value = "*",allowedHeaders = "*")
 public class StudentRestController {
     @Autowired
@@ -21,16 +22,16 @@ public class StudentRestController {
     @Autowired
     GroundService groundService;
 
-    @RequestMapping(value = "/student", method = RequestMethod.GET)
-    public ResponseEntity<List<Student>> listAllBlog() {
+    @GetMapping("")
+    public ResponseEntity<List<Student>> findAll() {
         List<Student> studentList = studentService.findAll();
         if (studentList.isEmpty()) {
             return new ResponseEntity<List<Student>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
         return new ResponseEntity<List<Student>>(studentList, HttpStatus.OK);
     }
-    @RequestMapping(value = "/student/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Student> getBlog(@PathVariable("id") Integer id) {
+    @GetMapping("{id}")
+    public ResponseEntity<Student> findById(@PathVariable("id") Integer id) {
         System.out.println("Fetching Student with id " + id);
         Student student = studentService.findById(id);
         if (student == null) {
@@ -39,13 +40,34 @@ public class StudentRestController {
         }
         return new ResponseEntity<Student>(student, HttpStatus.OK);
     }
-    @RequestMapping(value = "/student/", method = RequestMethod.POST)
-    public ResponseEntity<Void> createBlog(@RequestBody Student student, UriComponentsBuilder ucBuilder) {
-        System.out.println("Creating Student " + student.getName());
+   @PostMapping("")
+   public ResponseEntity<Void> createBlog(@RequestBody Student student, UriComponentsBuilder ucBuilder) {
+       studentService.save(student);
+       HttpHeaders headers = new HttpHeaders();
+       headers.setLocation(ucBuilder.path("/blogService/{id}").buildAndExpand(student.getId()).toUri());
+       return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+   }
+    @PutMapping("{id}")
+    public ResponseEntity<Student> updateBlog(@PathVariable("id") Integer id, @RequestBody Student student) {
+        System.out.println("Updating Blog " + id);
+        Student currentStudent = studentService.findById(id);
+        if (currentStudent == null) {
+            System.out.println("Blog with id " + id + " not found");
+            return new ResponseEntity<Student>(HttpStatus.NOT_FOUND);
+        }
+        student.setId(id);
         studentService.save(student);
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/student/{id}").buildAndExpand(student.getId()).toUri());
-        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+        return new ResponseEntity<Student>(currentStudent, HttpStatus.OK);
     }
-
+    @DeleteMapping("{id}")
+    public ResponseEntity<Student> deleteBlog(@PathVariable("id") Integer id) {
+        System.out.println("Fetching & Deleting Blog with id " + id);
+        Student student = studentService.findById(id);
+        if (student == null) {
+            System.out.println("Unable to delete. Blog with id " + id + " not found");
+            return new ResponseEntity<Student>(HttpStatus.NOT_FOUND);
+        }
+        studentService.deleteById(id);
+        return new ResponseEntity<Student>(HttpStatus.NO_CONTENT);
+    }
 }

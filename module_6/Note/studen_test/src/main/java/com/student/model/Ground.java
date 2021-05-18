@@ -1,6 +1,7 @@
 package com.student.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,7 +23,7 @@ public class Ground {
     @Column(name="ground_name")
     private String name;
 
-    @OneToMany(mappedBy = "ground")
+    @OneToMany(mappedBy = "ground",cascade = CascadeType.ALL)
     @JsonBackReference
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     List <Student> studentList;
