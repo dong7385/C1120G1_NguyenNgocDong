@@ -1,8 +1,21 @@
-<div class="container-view">
-  <div class="dialog">
-    <h3>Xác Nhận Thanh Toán </h3>
-    <div class="item">Tên Khách Hàng  :<b></b> </div>
-    <div class="item">Tổng Tiền  : <b>{{cards.totalMoney}}</b></div>
-    <button style="margin-bottom: 30px" type="button" class="btn btn-outline-primary" >Confirm</button>
+<div class="col-md-12"  style="background-image: url(https://afamilycdn.com/2018/photo-12-1516457881184.gif)">
+  <div class="card card-container" >
+    <img id="profile-img" src="https://canhme.com/wp-content/uploads/2016/01/PayPal-logo.png"/>
+    <div class="dialog" style="margin-top: 20px" >
+      <h4 STYLE="text-align: center; color: #0f9ed8"><b>XÁC NHẬN THANH TOÁN</b> </h4>
+      <div class="item row" >
+        <div class="col-lg-4">Tên Món Ăn:</div>
+        <div class="col-lg-8"><p  *ngFor="let c of cards" style="color: #d85909">{{c.food.foodName | titlecase}}</p></div>
+      </div>
+      <div class="item row" >
+        <div class="col-lg-4">Tổng Tiền: </div>
+        <div class="col-lg-8"><span style="color: #d85909">{{totalMoney | currency: "VND"}}</span></div>
+      </div>
+      <div class="form-group m-3 text-center">
+        <button class="btn btn-primary btn-block" (click)="confirm()">Xác Nhận</button>
+      </div>
+    </div>
   </div>
 </div>
+
+

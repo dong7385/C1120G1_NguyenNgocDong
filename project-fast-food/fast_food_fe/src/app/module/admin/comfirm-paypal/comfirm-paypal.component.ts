@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from '../../../service/cart/cart.service';
+import {Router} from '@angular/router';
+import {Cart} from '../../../model/Cart';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-comfirm-paypal',
@@ -8,17 +11,39 @@ import {CartService} from '../../../service/cart/cart.service';
 })
 export class ComfirmPaypalComponent implements OnInit {
 
-  cards:any;
-  constructor( cartService: CartService) { }
+  cards: Cart[]=[];
+  totalMoney: number = 0;
+
+  constructor( private cartService: CartService,
+               private router: Router,
+               private toast: ToastrService
+               ) { }
 
   ngOnInit(): void {
+    this.sendNumberOfCartToHeader();
     this.getCart();
-    console.log("ssssssssssss"+this.cards);
+    this.totalMoneyOfFood();
+  }
+
+
+  sendNumberOfCartToHeader() {
+    this.cartService.changeNumberCart(this.cards.length);
+  }
+
+  confirm() {
+    this.toast.success("Thanh Toán Thành Công");
+    localStorage.clear();
+    this.router.navigateByUrl('/')
   }
 
   getCart() {
-    this.cards = this.cards.getItems();
+    this.cards = this.cartService.getItems();
     console.log("get cart localSto" + this.cards);
   }
-
+  totalMoneyOfFood() {
+    console.log(this.cards);
+    for (let i = 0; i < this.cards.length; i++) {
+      this.totalMoney +=this.cards[i].food.foodPrice*this.cards[i].quantity;
+    }
+  }
 }
