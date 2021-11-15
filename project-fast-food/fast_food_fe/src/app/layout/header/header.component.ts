@@ -21,11 +21,15 @@ export class HeaderComponent implements OnInit {
   carts: any;
 
   private roles: string[];
-  isLoggedIn = false;
+  isLogged = false;
   username: string;
   image: string;
   private Swal: any;
 
+  role: string;
+  showUserBoard = false;
+  showAdminBoard = false;
+  showCartBoard= false;
 
   constructor(private router: Router,
               private homeComponent: HomeComponent,
@@ -40,9 +44,20 @@ export class HeaderComponent implements OnInit {
     this.receiveDataFromFoodList();
     if (this.tokenStorageService.getToken()) {
       const user = this.tokenStorageService.getUser();
-      this.isLoggedIn = !!this.tokenStorageService.getToken();
+      this.isLogged = !!this.tokenStorageService.getToken();
       this.roles = user.roles;
       this.username = user.username;
+      this.showUserBoard = this.roles.includes('ROLE_USER');
+    }
+    if (this.tokenStorageService.getToken()) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+      if (this.roles.includes('ROLE_ADMIN')) {
+        this.showAdminBoard = true;
+      }
+      if (this.roles.includes('ROLE_ADMIN') || this.roles.includes('ROLE_USER')){
+        this.showCartBoard = true;
+      }
     }
   }
 
@@ -68,7 +83,7 @@ export class HeaderComponent implements OnInit {
 
   receiveDataFromFoodList() {
     this.cartService.currentNumberCart.subscribe(data => {
-      this.numberOfCart =data;
+      this.numberOfCart = data;
     });
   }
 
