@@ -31,24 +31,13 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFoodById();
-    // this.getCart();
-    // this.sendNumberOfCartToHeader();
-    // this.receiveDataFromFoodList();
   }
 
   getFoodById() {
     console.log('this.id=' + this.id);
     this.foodService.getFoodById(this.id).subscribe(data => {
       this.food = data;
-      // this.foodName = data.foodName;
-      // this.foodPrice = data.foodPrice;
-      // this.description_food = data.description_food;
-      // this.imageFood = data.image;
-      // this.address = data.address;
-      // this.statusFoodName = data.statusFood.statusFoodName;
-      // this.typeFoodName = data.typeFood.typeFoodName;
-      // console.log('data detail ts= ' + this.foodName);
-      // console.log('data detail ts= ' + this.imageFood);
+      console.log(this.food);
     }, error => {
       console.log('GetInfoFood' + error + 'BackEnd');
     });
@@ -65,24 +54,26 @@ export class DetailComponent implements OnInit {
   }
 
   addToCard(food: Food, quantity: number) {
+    console.log("detail html"+food+ this.id);
     this.cartService.addToCart(food, quantity);
-    this.receiveDataFromFoodList();
-    this.toast.success('Thêm vào Giỏ Hàng Thành Công');
+     // this.toast.success('Thêm vào Giỏ Hàng Thành Công');
+     this.getCart();
+     this.sendNumberOfCartToHeader();
   }
 
-  // sendNumberOfCartToHeader() {
-  //   this.cartService.changeNumberCart(this.cards.length);
+  sendNumberOfCartToHeader() {
+    this.cartService.changeNumberCart(this.cards.length);
+  }
+
+  // receiveDataFromFoodList() {
+  //   this.cartService.currentNumberCart.subscribe(data => {
+  //     this.numberOfCart = data;
+  //
+  //   });
   // }
-
-  receiveDataFromFoodList() {
-    this.cartService.currentNumberCart.subscribe(data => {
-      this.numberOfCart = data;
-
-    });
-  }
 
   getCart() {
     this.cards = this.cartService.getItems();
-    console.log('caaaaa=  ' + this.cards);
+    console.log("get cart localSto" + this.cards);
   }
 }

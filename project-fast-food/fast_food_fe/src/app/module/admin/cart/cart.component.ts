@@ -2,6 +2,7 @@ import {Component, DoCheck, OnInit} from '@angular/core';
 import {CartService} from '../../../service/cart/cart.service';
 import {Cart} from '../../../model/Cart';
 import {ToastrService} from 'ngx-toastr';
+import {PaymentService} from '../../../service/payment/payment.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class CartComponent implements OnInit {
   totalMoney: number = 0;
 
 
-  constructor(private cartService: CartService, private toast: ToastrService) {
+  constructor(private cartService: CartService, private toast: ToastrService, public paymentService: PaymentService,) {
   }
 
 
@@ -35,8 +36,8 @@ export class CartComponent implements OnInit {
     console.log('caaaaa=  ' + this.cards);
   }
 
-  deleteOrderFood(foodId: any) {
-    this.cartService.removeCartById(foodId);
+  deleteOrderFood() {
+    this.cartService.removeCartById();
   }
 
   totalMoneyOfFood() {
@@ -47,5 +48,15 @@ export class CartComponent implements OnInit {
   }
   showInfoView() {
 
+  }
+
+  payPal(totalMoney: any) {
+    localStorage.setItem("orderId", String(this.cards));
+    this.paymentService.payment(totalMoney).subscribe(value => {
+      console.log(value)
+      // window.open(value.link)
+      // @ts-ignore
+      window.location.href = value.link;
+    })
   }
 }

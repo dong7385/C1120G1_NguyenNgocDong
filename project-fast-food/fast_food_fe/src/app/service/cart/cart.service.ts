@@ -29,6 +29,7 @@ export class CartService {
   // }
 
   addToCart(food: Food, quantity: number) {
+    console.log("detail service "+food+ quantity);
     for (let i = 0; i < this._cards.length; i++) {
       if (this._cards[i].food.foodId == food.foodId) {
         this._cards[i].quantity += quantity;
@@ -44,8 +45,7 @@ export class CartService {
     localStorage.setItem('Cart', JSON.stringify(this._cards));
   }
 
-  removeCartById(foodId: any) {
-    const value = JSON.stringify(foodId);
-    localStorage.removeItem(value);
+  removeCartById() {
+    localStorage.clear();
   }
 }

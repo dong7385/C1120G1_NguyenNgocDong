@@ -9,10 +9,11 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import { CartComponent } from './cart/cart.component';
+import { ComfirmPaypalComponent } from './comfirm-paypal/comfirm-paypal.component';
 
 
 @NgModule({
-  declarations: [DetailComponent, PaymentComponent, CartComponent],
+  declarations: [DetailComponent, PaymentComponent, CartComponent, ComfirmPaypalComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

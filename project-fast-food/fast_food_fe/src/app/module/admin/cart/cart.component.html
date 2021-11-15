@@ -34,7 +34,7 @@
                     <td>
                       <button  type="button" class="btn btn-danger btn-sm mr-1" data-toggle="modal"
                               data-target="#deleteModal"
-                              (click)="deleteOrderFood(c.food.foodId)">
+                              (click)="deleteOrderFood()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                              fill="currentColor"
                              class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -64,7 +64,7 @@
               </div>
               <div class="button text-right">
                 <a class="btn btn-default m-r-5" [routerLink]="['']">Trở Về Trang Chủ</a>
-                <a class="btn btn-primary">Thanh Toán</a>
+                <a class="btn btn-primary" (click)="payPal(totalMoney/23)">Thanh Toán</a>
               </div>
             </div>
           </div>

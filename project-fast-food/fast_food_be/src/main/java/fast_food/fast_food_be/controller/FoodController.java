@@ -30,7 +30,7 @@ public class FoodController {
     }
 
     @GetMapping("home/list")
-    public ResponseEntity<Page<Food>> findAllFood(@PageableDefault(value = 6) Pageable pageable) {
+    public ResponseEntity<Page<Food>> findAllFood(@PageableDefault(value = 12) Pageable pageable) {
         Page<Food> listFood = foodService.getListFood(pageable);
         if (listFood.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

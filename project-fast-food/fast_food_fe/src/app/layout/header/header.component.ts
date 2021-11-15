@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {HomeComponent} from '../home/home.component';
 import {DataService} from '../../service/data/data.service';
@@ -6,6 +6,7 @@ import {CartService} from '../../service/cart/cart.service';
 import {TokenStorageService} from '../../service/security/token-storage.service';
 import {AuthService} from '../../service/security/auth.service';
 import Swal from 'sweetalert2';
+import {Cart} from '../../model/Cart';
 
 @Component({
   selector: 'app-header',
@@ -14,9 +15,10 @@ import Swal from 'sweetalert2';
 })
 export class HeaderComponent implements OnInit {
   defaultImgUrl = 'https://seeklogo.com/images/F/fastfood-logo-D673849A4C-seeklogo.com.png';
-  keySearch: string ="";
+  keySearch: string = '';
   page = 0;
   numberOfCart: number;
+  carts: any;
 
   private roles: string[];
   isLoggedIn = false;
@@ -25,14 +27,14 @@ export class HeaderComponent implements OnInit {
   private Swal: any;
 
 
-
   constructor(private router: Router,
               private homeComponent: HomeComponent,
               private data: DataService,
               private cartService: CartService,
               private tokenStorageService: TokenStorageService,
               private authService: AuthService
-              ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.receiveDataFromFoodList();
@@ -43,6 +45,7 @@ export class HeaderComponent implements OnInit {
       this.username = user.username;
     }
   }
+
   logout() {
     Swal.fire({
       title: 'Bạn có muốn đăng suất ' + this.username + ' ?',
@@ -65,11 +68,12 @@ export class HeaderComponent implements OnInit {
 
   receiveDataFromFoodList() {
     this.cartService.currentNumberCart.subscribe(data => {
-      this.numberOfCart = data;
+      this.numberOfCart =data;
     });
   }
+
   search() {
-    console.log(this.keySearch)
+    console.log(this.keySearch);
     this.data.changeKeySearch(this.keySearch);
   }
 
