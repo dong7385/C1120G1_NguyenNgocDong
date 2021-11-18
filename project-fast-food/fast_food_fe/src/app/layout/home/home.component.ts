@@ -3,6 +3,7 @@ import {FoodService} from '../../service/food.service';
 import {ToastrService} from 'ngx-toastr';
 import {DataService} from '../../service/data/data.service';
 import {CartService} from '../../service/cart/cart.service';
+import {Cart} from '../../model/Cart';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ import {CartService} from '../../service/cart/cart.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  cards: Cart[]=[];
   food: any;
   foodList: any;
   keySearch = '';
@@ -93,4 +95,5 @@ export class HomeComponent implements OnInit {
 
   addToCard(food: any) {
   }
+
 }

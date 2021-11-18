@@ -17,7 +17,9 @@ public class OrderFood {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_food_id")
     private Long orderFoodId;
-    private Integer quantity_food;
+
+    @Column(name = "quantity_food")
+    private Integer quantityFood;
 
     @ManyToOne
     @JoinColumn(name = "orders_id")
@@ -27,8 +29,8 @@ public class OrderFood {
     @JoinColumn(name = "food_id")
     private Food food;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
+//    @ManyToOne
+//    @JoinColumn(name = "employee_id")
+//    private Employee employee;
 
 }

@@ -1,19 +1,21 @@
 package fast_food.fast_food_be.entity;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "customer")
 public class Customer {
 
     @Id
@@ -27,14 +29,8 @@ public class Customer {
     private String CustomerEmail;
     private String customerAddress;
 
-
-
-    @OneToMany(mappedBy = "customer")
-    @JsonBackReference(value = "orders-food-customer")
-    private List<OrderFood> orderFoodOfCustomerList;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "account_id",referencedColumnName = "account_id")
+    @OneToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "account_id")
     private Account account;
 
     @ManyToOne

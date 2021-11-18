@@ -34,10 +34,11 @@
         </div>
       </div>
     </form>
-    <div class="alert alert-success" *ngIf="isLoggedIn">
-      <p>Bạn đăng nhập với quyền là {{ roles }} !</p>
+    <div class=" alert alert-success btn-block" *ngIf="isLoggedIn" style="margin-top: 20px">
+      <p style="text-align: center"> Bạn Đã Đăng Nhập Thành Công.</p>
     </div>
-    <button class="btn btn-outline-danger mx-3" [routerLink]="['']">Trở về trang chủ</button>
+<!--    <button class="btn btn-outline-danger mx-3" [routerLink]="['']">Trở về trang chủ</button>-->
+    <button  class="btn btn-check-out btn-block" [routerLink]="['']"> Quay Lại Trang Chủ</button>
   </div>
 </div>
 

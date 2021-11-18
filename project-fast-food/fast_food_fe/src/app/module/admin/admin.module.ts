@@ -10,10 +10,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import { CartComponent } from './cart/cart.component';
 import { ComfirmPaypalComponent } from './comfirm-paypal/comfirm-paypal.component';
+import { ListComponent } from './customer/list/list.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { InfoCustomerComponent } from './info-customer/info-customer.component';
 
 
 @NgModule({
-  declarations: [DetailComponent, PaymentComponent, CartComponent, ComfirmPaypalComponent],
+  declarations: [DetailComponent, PaymentComponent, CartComponent, ComfirmPaypalComponent, ListComponent, TransactionComponent, InfoCustomerComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

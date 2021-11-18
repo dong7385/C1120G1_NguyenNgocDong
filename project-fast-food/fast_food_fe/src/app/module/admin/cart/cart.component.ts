@@ -3,6 +3,8 @@ import {CartService} from '../../../service/cart/cart.service';
 import {Cart} from '../../../model/Cart';
 import {ToastrService} from 'ngx-toastr';
 import {PaymentService} from '../../../service/payment/payment.service';
+import {Router} from '@angular/router';
+import {HeaderComponent} from '../../../layout/header/header.component';
 
 
 @Component({
@@ -17,7 +19,10 @@ export class CartComponent implements OnInit {
   totalMoney: number = 0;
 
 
-  constructor(private cartService: CartService, private toast: ToastrService, public paymentService: PaymentService,) {
+  constructor(private cartService: CartService,
+              private toast: ToastrService,
+              private paymentService: PaymentService,
+              private router: Router) {
   }
 
 
@@ -38,6 +43,10 @@ export class CartComponent implements OnInit {
 
   deleteOrderFood() {
     this.cartService.removeCartById();
+    this.toast.success("Hủy Giỏ Hàng Thành Công")
+    this.getCart();
+    this.totalMoney=0;
+    this.cards.length=0;
   }
 
   totalMoneyOfFood() {

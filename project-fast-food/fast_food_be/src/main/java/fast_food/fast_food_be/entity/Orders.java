@@ -1,6 +1,7 @@
 package fast_food.fast_food_be.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,12 @@ public class Orders {
 
     @OneToMany(mappedBy = "orders")
     @JsonBackReference("orders-food-orders")
+    @JsonIgnore
     private List<OrderFood>orderFoodOfOrdersList;
+
+
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account account;
 
 }

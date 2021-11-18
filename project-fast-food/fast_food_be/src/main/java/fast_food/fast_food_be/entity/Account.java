@@ -1,6 +1,7 @@
 package fast_food.fast_food_be.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "account")
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,19 +29,22 @@ public class Account {
     private String userTime;
     private int status;
 
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "account_role",
             joinColumns = @JoinColumn(name = "account_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roleSet = new HashSet<>();
 
-    @OneToOne(mappedBy = "account")
-    @JsonBackReference
+    @OneToOne(mappedBy = "account",cascade = CascadeType.ALL)
+    @JsonBackReference(value = "account-customer")
     private Customer customer;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference
+    @JsonBackReference(value = "account-employee")
     private Employee employee;
+
+    @OneToMany(mappedBy = "account")
+    @JsonBackReference("orders-account")
+    private List<Orders>accountOfOrderList;
 
 }

@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit {
       cancelButtonColor: '#768394'
     }).then((result) => {
       if (result.value) {
-        this.authService.logout(this.tokenStorageService.getUser().employee.employeeId).subscribe();
+        this.authService.logout(this.tokenStorageService.getUser().username).subscribe();
         this.tokenStorageService.signOut();
         window.location.href = 'http://localhost:4200';
       } else if (result.dismiss === this.Swal.DismissReason.cancel) {

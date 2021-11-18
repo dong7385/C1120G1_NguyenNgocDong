@@ -39,7 +39,12 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     void saveRoleForAccount(Long accountId, Long role);
 
     @Query(value = "select * from account where username = ?1 ", nativeQuery = true)
-    Optional<Account> findByUserNames(String userName);
+    Optional<Account> findByUserNames(String username);
+
+    @Query(value = " select (orders.orders_id) as ordersId " +
+            " from orders join `account` on orders.account_id =`account`.account_id " +
+            " where `account`.username= ?1 ", nativeQuery = true)
+    Long getAccountByUsernameDto(String username);
 
     @Transactional
     @Modifying

@@ -21,7 +21,9 @@ public interface AccountService {
     List<Account> getAccountList();
 
 
-    Optional<Account> findByUserNames(String userName);
+    Optional<Account> findByUserNames(String username);
+
+    Long getAccountByUsernameDto(String username);
 
     void changePassWord(String newPassword,Long accountId);
 

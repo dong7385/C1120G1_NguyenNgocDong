@@ -56,7 +56,7 @@ export class DetailComponent implements OnInit {
   addToCard(food: Food, quantity: number) {
     console.log("detail html"+food+ this.id);
     this.cartService.addToCart(food, quantity);
-     // this.toast.success('Thêm vào Giỏ Hàng Thành Công');
+     this.toast.success('Thêm vào Giỏ Hàng Thành Công');
      this.getCart();
      this.sendNumberOfCartToHeader();
   }

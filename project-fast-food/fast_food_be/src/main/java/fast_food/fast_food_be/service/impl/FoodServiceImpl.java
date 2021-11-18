@@ -1,5 +1,6 @@
 package fast_food.fast_food_be.service.impl;
 
+import fast_food.fast_food_be.dto.ListCartDto;
 import fast_food.fast_food_be.entity.Food;
 import fast_food.fast_food_be.repository.FoodRepository;
 import fast_food.fast_food_be.service.FoodService;
@@ -34,5 +35,10 @@ public class FoodServiceImpl implements FoodService {
     @Override
     public Food getFoodById(Long foodId) {
         return foodRepository.getFoodById(foodId);
+    }
+
+    @Override
+    public Food saveOrder(ListCartDto listCartDto, String username) {
+        return null;
     }
 }
