@@ -22,6 +22,7 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Long customerId;
+    @Column(name = "customer_name")
     private String customerName;
 
     private int flag;
@@ -29,7 +30,7 @@ public class Customer {
     private String CustomerEmail;
     private String customerAddress;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id", referencedColumnName = "account_id")
     private Account account;
 

@@ -1,0 +1,35 @@
+<div class="col-md-12" style="background-image: url(https://www.stellapharm.com/wp-content/uploads/2021/01/whole-food-foods-healthy-vegetables-eggs-ingredients-1296x728-header.jpg)">
+  <div class="card card-container"style="background-image: url(https://truongquochoc.com/wp-content/uploads/2020/10/30-hinh-nen-3d-cuc-ao-dep-nhat-the-gioi-4.jpg)">
+<!--    <h5 class="text-danger text-center">Tài khoản đã quá hạn đăng nhập sau 30 ngày yêu cầu thay đổi mật khẩu</h5>-->
+    <img id="profile-img"
+         src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/hijabi-cook-chef-spoons-food-avatar-logo-design-template-71d5c034dcc7d89fcda2ddf386bb676c_screen.jpg?ts=1619324492"
+         class="profile-img-card w-50 h-50"/>
+    <h5 class="text-center text-success" style="color:#00b74a; opacity: 1; font-size: 18px" >{{username}}</h5>
+    <form [formGroup]="formPassword" (ngSubmit)="changePassword()" novalidate>
+      <div class="form-group">
+        <label for="username" class="text-warning" style="color: yellow">Mật khẩu mới.</label>
+        <input id="username" class="form-control" type="password" formControlName="newPassword" placeholder=""/>
+        <small  *ngIf="formPassword.get('newPassword')?.hasError('required')
+                                && (formPassword.get('newPassword')?.pristine || formPassword.get('newPassword')?.dirty)"
+               class="alert alert-danger mt-1 d-block">
+          * Yêu cầu nhập mật khẩu mới.</small>
+        <small *ngIf="(formPassword.get('newPassword')?.hasError('minlength') || formPassword.get('newPassword')?.hasError('maxlength'))
+                                && formPassword.get('newPassword')?.dirty" class="alert alert-danger mt-1 d-block">
+          * Mật khẩu ít nhất 8 kí tự và tối đa 20 kí tự.</small>
+      </div>
+      <div class="form-group">
+        <label for="password2" class="text-warning" style="color: yellow">Nhập lại mật khẩu</label>
+        <input id="password2" class="form-control" type="password" formControlName="repeatNewPassword"
+               placeholder=""/>
+        <small *ngIf="formPassword.get('repeatNewPassword')?.hasError('required')
+                                && (formPassword.get('repeatNewPassword')?.pristine || formPassword.get('repeatNewPassword')?.dirty)"
+               class="alert alert-danger mt-1 d-block">* Yêu cầu nhập lại mật khẩu.</small>
+        <small *ngIf="formPassword.controls.repeatNewPassword.dirty && formPassword.errors?.checkPassWord"
+               class="alert alert-danger mt-1 d-block">* Mật khẩu chưa khớp.</small>
+      </div>
+      <div class="form-group m-3 text-center">
+        <button class="btn btn-primary btn-block">Thay đổi mật khẩu</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -5,10 +5,11 @@ import { SecurityRoutingModule } from './security-routing.module';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ChangPassWordComponent } from './chang-pass-word/chang-pass-word.component';
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, ChangPassWordComponent],
   // exports: [
   //   LoginComponent
   // ],

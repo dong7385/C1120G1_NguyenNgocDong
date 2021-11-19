@@ -3,7 +3,7 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {FoodService} from '../../../service/food.service';
 import {TokenStorageService} from '../../../service/security/token-storage.service';
-import {Customer} from '../../../model/Customer';
+
 
 @Component({
   selector: 'app-info-customer',
@@ -12,7 +12,9 @@ import {Customer} from '../../../model/Customer';
 })
 export class InfoCustomerComponent implements OnInit {
   username: string;
-  customer: Customer;
+  customer: any;
+  imageCus = 'https://img3.thuthuatphanmem.vn/uploads/2019/08/08/anh-nen-cho-word_111903866.jpg';
+
 
   constructor(private toast: ToastrService,
               private router: Router,
@@ -28,11 +30,11 @@ export class InfoCustomerComponent implements OnInit {
 
   getInfoCustomer() {
     this.foodService.getInfoCustomer(this.username).subscribe(data => {
-      this.customer=data;
+      this.customer = data;
       console.log(this.customer);
-      // this.toast.success('Truy Cập Thành Công',"Thông Tin Khách Hàng");
-    },error => (
-      this.toast.error("Cập Nhật Thông Tin Không Thành Công")
+      this.toast.success('Truy Cập Thành Công', 'Thông Tin Khách Hàng');
+    }, error => (
+      this.toast.error('Cập Nhật Thông Tin Không Thành Công')
     ));
   }
 }

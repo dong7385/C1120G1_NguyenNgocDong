@@ -35,7 +35,7 @@ public class Account {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roleSet = new HashSet<>();
 
-    @OneToOne(mappedBy = "account",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "account")
     @JsonBackReference(value = "account-customer")
     private Customer customer;
 

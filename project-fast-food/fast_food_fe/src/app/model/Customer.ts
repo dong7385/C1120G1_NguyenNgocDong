@@ -3,10 +3,10 @@ import {Gender} from './Gender';
 
 export interface Customer {
   customerId: number;
-  customerName: number;
+  customerName: string;
   flag: number;
   customerPhone: string;
-  CustomerEmail: string;
+  customerEmail: string;
   customerAddress: string;
   account: Account;
   gender: Gender;

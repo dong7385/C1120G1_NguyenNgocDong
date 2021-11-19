@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Food} from '../model/Food';
 import {TokenStorageService} from './security/token-storage.service';
 import {Cart} from '../model/Cart';
-import {Customer} from '../model/Customer';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +35,7 @@ export class FoodService {
   }
 
   getTransaction(username: string): Observable<any> {
+    console.log(this.API_URL + '/transaction/' + username, this.httpOptions);
     return this.httpClient.get<any>(this.API_URL + '/transaction/' + username, this.httpOptions);
   }
 
@@ -44,8 +44,7 @@ export class FoodService {
   }
 
   getInfoCustomer(username: string): Observable<any> {
-    console.log(this.API_URL + '/infoCustomer/' + username,this.httpOptions);
-    return this.httpClient.get<any>(this.API_URL + '/infoCustomer/' + username);
+    return this.httpClient.get<any>(this.API_URL + '/infoCustomer/' + username,this.httpOptions);
 
   }
 }

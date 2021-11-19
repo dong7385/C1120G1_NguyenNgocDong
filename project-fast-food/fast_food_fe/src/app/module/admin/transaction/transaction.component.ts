@@ -17,7 +17,7 @@ import {OrderFood} from '../../../model/OrderFood';
 export class TransactionComponent implements OnInit {
 
   username: string;
-  orderFoods: OrderFood[] = [];
+  orderFoods: any;
 
   constructor(private cartService: CartService,
               private toast: ToastrService,

@@ -1,6 +1,5 @@
 package fast_food.fast_food_be.service.impl;
 
-import fast_food.fast_food_be.dto.CustomerDto;
 import fast_food.fast_food_be.entity.Customer;
 import fast_food.fast_food_be.repository.CustomerRepository;
 import fast_food.fast_food_be.service.CustomerService;

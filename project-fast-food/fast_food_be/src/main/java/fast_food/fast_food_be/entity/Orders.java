@@ -28,7 +28,6 @@ public class Orders {
 
     @OneToMany(mappedBy = "orders")
     @JsonBackReference("orders-food-orders")
-    @JsonIgnore
     private List<OrderFood>orderFoodOfOrdersList;
 
 

@@ -2,7 +2,6 @@ package fast_food.fast_food_be.controller;
 
 
 import fast_food.fast_food_be.dto.CartDto;
-import fast_food.fast_food_be.dto.CustomerDto;
 import fast_food.fast_food_be.dto.ListCartDto;
 import fast_food.fast_food_be.entity.Customer;
 import fast_food.fast_food_be.entity.Food;
