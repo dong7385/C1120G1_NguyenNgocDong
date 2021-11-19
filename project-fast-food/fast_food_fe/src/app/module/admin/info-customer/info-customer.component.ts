@@ -13,7 +13,7 @@ import {TokenStorageService} from '../../../service/security/token-storage.servi
 export class InfoCustomerComponent implements OnInit {
   username: string;
   customer: any;
-  imageCus = 'https://img3.thuthuatphanmem.vn/uploads/2019/08/08/anh-nen-cho-word_111903866.jpg';
+  imageCus = 'https://9mobi.vn/cf/images/2015/04/nkk/hinh-avatar-dep-1.jpg';
 
 
   constructor(private toast: ToastrService,
