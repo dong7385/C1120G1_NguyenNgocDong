@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
   cards: Cart[]=[];
   numberCart: any;
   totalMoney: number = 0;
+  imageCartEmpty='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs9WG8Ggi4MCejzhZ5O0eECAYdUz67MxqCiA&usqp=CAU';
 
 
   constructor(private cartService: CartService,

@@ -43,9 +43,11 @@
                 <div class="product-block product-resize fixheight" style="height: 280px;">
                   <div class="product-image image-resize" style="height: 160px;">
                     <div class="sold-out" style="color: white">{{f.statusFood.statusFoodName}}</div>
-                    <a>
-                      <img class="first-img" [src]="f.image" alt="">
-                    </a>
+                    <div >
+                      <a>
+                        <img  class="first-img" [src]="f.image" alt="">
+                      </a>
+                    </div>
                     <div class="product-actions hidden-xs">
                       <div class="btn-add-to-cart" (click)="addToCard(food)">
                         <a href="javascript:void(0);"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>

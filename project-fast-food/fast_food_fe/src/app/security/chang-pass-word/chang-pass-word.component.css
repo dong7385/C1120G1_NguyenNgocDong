@@ -30,3 +30,9 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+.fontError {
+  font-size: 15px;
+  color: rgba(255,57,74,0.96);
+  fill-opacity: 1;
+}

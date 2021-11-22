@@ -32,7 +32,7 @@ export class InfoCustomerComponent implements OnInit {
     this.foodService.getInfoCustomer(this.username).subscribe(data => {
       this.customer = data;
       console.log(this.customer);
-      this.toast.success('Truy Cập Thành Công', 'Thông Tin Khách Hàng');
+      // this.toast.success('Truy Cập Thành Công', 'Thông Tin Khách Hàng');
     }, error => (
       this.toast.error('Cập Nhật Thông Tin Không Thành Công')
     ));

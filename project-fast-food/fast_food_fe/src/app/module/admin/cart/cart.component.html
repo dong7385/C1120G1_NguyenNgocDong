@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <fieldset class="scheduler-border">
-          <legend class="scheduler-border">Thông Tin Giỏ Hàng</legend>
+          <legend class="scheduler-border" style="font-size: 50px">Thông Tin Giỏ Hàng</legend>
           <div class="myorder-content myorder-detail-content clearfix">
             <div class="myorder-block">
               <div class="table-responsive clearfix myorder-info">
@@ -17,7 +17,7 @@
                     <th style="text-align: right;width: 160px">Giá</th>
                     <th style="text-align: center">Số Lượng</th>
 <!--                    <th style="text-align: right;width: 160px">Thành Tiền</th>-->
-                    <th style="text-align: center;width: 200px" > Chức Nảng</th>
+                    <th style="text-align: center;width: 200px" > Chức Năng</th>
 
                   </tr>
                   </thead>
@@ -54,17 +54,20 @@
                   </tbody>
                 </table>
                 <ng-template #nodata>
-                  <h5 style="color: rgba(255,91,32,0.99)" class="text-center">---------- Giỏ Hàng Không Tồn Tại
-                    ----------</h5>
+                  <div ><img src="{{imageCartEmpty}}" style="height:auto;width: 150px"></div>
                 </ng-template>
               </div>
-              <div style="text-align: right;margin-right: 370px" class="p-b-20">
-                <b style="font-size: 18px; margin-right: 10px">TỔNG TIỀN: </b>
+              <div *ngIf="totalMoney!=0; else noTotalMoney" style="text-align: right;margin-right: 394px" class="p-b-20">
+                <b style="font-size: 18px; margin-right: 1px">TỔNG TIỀN: </b>
                 <b  style="width: 243px; font-size: 18px;color: #d85909">{{totalMoney | currency: 'VND'}}</b>
               </div>
-              <div class="button text-right">
-                <a class="btn btn-default m-r-5" [routerLink]="['']">Trở Về Trang Chủ</a>
-                <a class="btn btn-primary" (click)="payPal(totalMoney/23)">Thanh Toán</a>
+              <ng-template #noTotalMoney>
+              </ng-template>
+
+
+              <div class="button text-right" >
+                <a style="font-size: 15px" class="btn btn-default m-r-5" [routerLink]="['']">Quay Lại Trang Chủ</a>
+                <a style="font-size: 15px" class="btn btn-primary" (click)="payPal(totalMoney/23)">Thanh Toán</a>
               </div>
             </div>
           </div>
