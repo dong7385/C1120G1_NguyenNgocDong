@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header sticky" style="margin-bottom: 0">
   <header id="header" class="">
     <div id="header_main">
       <div class="container">
@@ -74,25 +74,26 @@
               </div>
               <div class="user_box">
                 <ul *ngIf="username!=null;else nodata ">
-                  <li >
+                  <li>
                     <a (click)="logout()">Đăng Xuất</a>
                   </li>
-                  <li >
+                  <li>
                     <a [routerLink]="['/admin/transaction/']">Lịch Sử Giao Dịch</a>
                   </li>
-                  <li >
+                  <li>
                     <a [routerLink]="['/changePass/']">Thay Đổi Mật Khẩu </a>
                   </li>
-                  <li >
+                  <li>
                     <a [routerLink]="['/admin/infoCustomer/']">Thông Tin Khách Hàng </a>
                   </li>
 
                 </ul>
-                  <ng-template #nodata> <ul>
+                <ng-template #nodata>
+                  <ul>
                     <li><a [routerLink]="['/login/']">Đăng nhập</a></li>
                     <li><a href="dang-ky.html">Đăng Ký</a></li>
-                </ul>
-                  </ng-template>
+                  </ul>
+                </ng-template>
               </div>
             </div>
             <!-- End account -->
@@ -122,7 +123,7 @@
               </div>
               <div class="close_menu"></div>
             </div>
-            <div class="content_menu">
+            <div class="content_menu ">
               <ul>
                 <li class="level0"><a class=""><span>Trang chủ</span></a></li>
                 <li class="level0"><a class="" href="/gioi-thieu.html"><span>Giới thiệu</span></a></li>
@@ -172,7 +173,7 @@
     </div>
   </header>
 
-  <section class="navigation-menu clearfix">
+  <section class="navigation-menu clearfix ">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
